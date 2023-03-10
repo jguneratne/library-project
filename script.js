@@ -10,5 +10,10 @@ function Book(title, author, pages, status) {
 function addBookToLibrary() {
   // Take user input and feed it into new Book instantiation
   // Feed input into myLibrary array
-  // Use info to create new Library card in DOM
 }
+
+function displayBooks() {
+  // Loop through array to display each book (in a Table or in their own cards)
+}
+
+//Button - how to make form pop up on button click?
