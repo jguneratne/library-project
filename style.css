@@ -27,6 +27,7 @@
 .header button {
   height: 8ch;
   border: none;
+  align-self: center;
   background-color: antiquewhite;
 }
 
