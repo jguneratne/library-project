@@ -25,14 +25,25 @@
 }
 
 .header button {
-  height: 10ch;
+  height: 8ch;
   border: none;
   background-color: antiquewhite;
 }
 
-.body {
+.main {
   background-color: aqua;
   grid-area: 2 / 1 / 3 / 2;
+}
+
+.bookshelf {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: min-content;
+  gap: 2ch;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: violet;
 }
 
 footer {
