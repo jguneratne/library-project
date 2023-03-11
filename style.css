@@ -52,10 +52,9 @@
 }
 
 .add-form {
-  /* display: grid;
-grid-template-rows: repeat(2, min-content); */
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 1.5ch;
   height: min-content;
   width: 35%;
@@ -68,17 +67,19 @@ grid-template-rows: repeat(2, min-content); */
   padding: 5ch;
   background-color: aquamarine;
   border-radius: 3ch;
-  /* outline: 1px solid black;
-outline-offset: -4ch; */
+  outline: 1px solid black;
+  outline-offset: -2ch;
 }
 
 .form-line {
   display: flex;
+  flex-wrap: wrap;
   gap: 2ch;
 }
 
 .btn-line {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 3ch;
   margin-top: 4ch;
@@ -94,7 +95,7 @@ label {
 input[type="text"] {
   display: inline-block;
   height: 3ch;
-  width: 30ch;
+  width: 25ch;
 }
 
 /* Footer */
