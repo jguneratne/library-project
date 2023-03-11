@@ -10,6 +10,8 @@
   grid-template-rows: 1fr 7.5fr 0.8fr;
 }
 
+/* Header */
+
 .header {
   background-color: antiquewhite;
   grid-area: 1 / 1 / 2 / 2;
@@ -31,6 +33,8 @@
   background-color: antiquewhite;
 }
 
+/* Main/Bookshelf */
+
 .main {
   background-color: aqua;
   grid-area: 2 / 1 / 3 / 2;
@@ -46,6 +50,54 @@
   margin-right: auto;
   background-color: violet;
 }
+
+.add-form {
+  /* display: grid;
+grid-template-rows: repeat(2, min-content); */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5ch;
+  height: min-content;
+  width: 35%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 5ch;
+  background-color: aquamarine;
+  border-radius: 3ch;
+  /* outline: 1px solid black;
+outline-offset: -4ch; */
+}
+
+.form-line {
+  display: flex;
+  gap: 2ch;
+}
+
+.btn-line {
+  display: flex;
+  justify-content: center;
+  gap: 3ch;
+  margin-top: 4ch;
+}
+
+label {
+  display: inline-block;
+  margin-right: 4ch;
+  width: 10ch;
+  text-align: right;
+}
+
+input[type="text"] {
+  display: inline-block;
+  height: 3ch;
+  width: 30ch;
+}
+
+/* Footer */
 
 footer {
   background-color: antiquewhite;
