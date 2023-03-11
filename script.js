@@ -17,3 +17,19 @@ function displayBooks() {
 }
 
 //Button - how to make form pop up on button click?
+
+function showForm() {
+  const addBook = document.querySelector(".add-book");
+
+  addBook.addEventListener("pointerdown", () => {
+    const form = document.querySelector(".form-div");
+
+    if (form.style.display === "none") {
+      form.style.display = "block";
+    } else {
+      form.style.display = "none";
+    }
+  });
+}
+
+showForm();

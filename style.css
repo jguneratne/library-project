@@ -26,11 +26,12 @@
   margin-left: 4ch;
 }
 
-.header button {
+.header button.add-book {
   height: 8ch;
   border: none;
   align-self: center;
   background-color: antiquewhite;
+  cursor: pointer;
 }
 
 /* Main/Bookshelf */
@@ -52,8 +53,7 @@
 }
 
 .form-div {
-  display: flex;
-  flex-direction: column;
+  display: none;
 }
 
 .add-form {
