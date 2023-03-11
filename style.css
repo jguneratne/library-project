@@ -51,12 +51,18 @@
   background-color: violet;
 }
 
+.form-div {
+  display: flex;
+  flex-direction: column;
+}
+
 .add-form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 1.5ch;
   height: min-content;
+  min-width: min-content;
   width: 35%;
   position: absolute;
   left: 0;
@@ -94,8 +100,9 @@ label {
 
 input[type="text"] {
   display: inline-block;
+  flex: 1;
   height: 3ch;
-  width: 25ch;
+  width: 10%;
 }
 
 /* Footer */
