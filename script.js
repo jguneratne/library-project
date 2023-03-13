@@ -27,22 +27,39 @@ function getCardInfo(arr) {
     for (let j = 0; j < innerArrayLength; j++) {
       // console.log("[" + i + "," + j + "] = " + arr[i][j]);
       newCardInfo += `<p>${arr[i][j]}</p>`;
+
+      createCard(newCardInfo);
     }
   }
   return newCardInfo;
 }
 
-function createCard() {
+function createCard(info) {
   const newCard = document.createElement("div");
-  newCard.style.backgroundColor = "#FFFFF0";
-  newCard.style.borderRadius = "1ch";
-  newCard.style.width = "1fr";
-  newCard.style.height = "15rem";
-  newCard.style.display = "flex";
-  newCard.style.flexDirection = "column";
-  newCard.style.flexWrap = "wrap";
+  newCard.className = "new-card";
+
+  const title = document.createTextNode(`<h6>Title:</h6> <p>${Book.title}</p>`);
+  const author = document.createTextNode(
+    `<h6>Author:</h6> <p>${Book.author}</p>`
+  );
+  const pages = document.createTextNode(`<h6>Pages:</h6> <p>${Book.pages}</p>`);
+  const status = document.createTextNode(
+    `<h6>Status:</h6> <p>${Book.status}</p>`
+  ); // find how to create a checkbox
+
+  newCard.appendChild(title);
+  newCard.appendChild(author);
+  newCard.appendChild(pages);
+  newCard.appendChild(status);
+
+  const libEntry = document.querySelector(".bookshelf");
+  libEntry.appendChild(newCard);
 
   return newCard;
+}
+
+function appendCard(parent, child) {
+  parent.appendChild(child);
 }
 
 function showForm() {
