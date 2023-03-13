@@ -13,21 +13,36 @@ function Book(title, author, pages, status) {
 function addBookToLibrary() {
   // Take user input and feed it into new Book instantiation
   // Feed input into myLibrary array
-
-  const newCard = document.querySelector(".add");
 }
 
-function displayBooks() {
+function getCardInfo(arr) {
+  let newCardInfo = "";
+
   // Loop through array to display each book (in a Table or in their own cards)
-  for (let i = 0; i < myLibrary.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     // get the size of the inner array
-    var innerArrayLength = myLibrary[i].length;
+    var innerArrayLength = arr[i].length;
 
     // loop the inner array
     for (let j = 0; j < innerArrayLength; j++) {
-      console.log("[" + i + "," + j + "] = " + myLibrary[i][j]);
+      // console.log("[" + i + "," + j + "] = " + arr[i][j]);
+      newCardInfo += `<p>${arr[i][j]}</p>`;
     }
   }
+  return newCardInfo;
+}
+
+function createCard() {
+  const newCard = document.createElement("div");
+  newCard.style.backgroundColor = "#FFFFF0";
+  newCard.style.borderRadius = "1ch";
+  newCard.style.width = "1fr";
+  newCard.style.height = "15rem";
+  newCard.style.display = "flex";
+  newCard.style.flexDirection = "column";
+  newCard.style.flexWrap = "wrap";
+
+  return newCard;
 }
 
 function showForm() {
@@ -36,11 +51,11 @@ function showForm() {
   form.style.display = "block";
 }
 
-// function clicked() {
-//   console.log("Click");
-// }
-
+// Global Variables
 const addBookBtn = document.querySelector(".add-book");
+
+// Event Listeners
 addBookBtn.addEventListener("pointerdown", showForm);
 
-displayBooks();
+// Function Calls
+getCardInfo(myLibrary);
