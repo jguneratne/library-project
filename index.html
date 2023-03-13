@@ -17,34 +17,42 @@
       </div>
 
       <div class="main">
-        <div class="bookshelf"></div>
+        <div class="bookshelf">
+          <div class="new-card"></div>
+          <div class="new-card"></div>
+          <div class="new-card"></div>
+          <div class="new-card"></div>
+          <div class="new-card"></div>
+        </div>
       </div>
 
       <div class="form-div">
         <form action="" class="add-form">
           <div class="form-line">
             <label for="title">Title:</label>
-            <input type="text" id="title" name="title" />
+            <input type="text" id="title" name="cardInfo" />
           </div>
 
           <div class="form-line">
             <label for="author">Author:</label>
-            <input type="text" id="author" name="author" />
+            <input type="text" id="author" name="cardInfo" />
           </div>
 
           <div class="form-line">
             <label for="pages">Pages:</label>
-            <input type="text" id="pages" name="pages" />
+            <input type="text" id="pages" name="cardInfo" />
           </div>
 
           <div class="form-line">
             <label for="status">Finished:</label>
-            <input type="checkbox" id="status" name="status" />
+            <input type="checkbox" id="status" name="cardInfo" />
           </div>
 
           <div class="btn-line">
-            <button type="submit" form="form1" value="Add">Add Book</button>
-            <button type="submit" form="form1" value="Remove">
+            <button type="submit" form="form1" value="Add" class="add">
+              Add Book
+            </button>
+            <button type="submit" form="form1" value="Remove" class="remove">
               Remove Book
             </button>
           </div>

@@ -46,10 +46,18 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: min-content;
   gap: 2ch;
+  padding: 2ch;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
   background-color: violet;
+}
+
+.new-card {
+  background-color: ivory;
+  border-radius: 1ch;
+  width: 1fr;
+  height: 15rem;
 }
 
 .form-div {
