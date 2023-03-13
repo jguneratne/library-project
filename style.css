@@ -56,11 +56,12 @@
 .new-card {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   background-color: ivory;
   border-radius: 1ch;
   width: 1fr;
   height: 15rem;
+  padding: 4ch;
 }
 
 .form-div {
