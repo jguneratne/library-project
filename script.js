@@ -34,7 +34,7 @@ function getCardInfo(arr) {
   return newCardInfo;
 }
 
-function createCard(info) {
+Book.prototype.createCard = function () {
   const libEntry = document.querySelector(".bookshelf");
 
   const newCard = document.createElement("div");
@@ -94,7 +94,7 @@ function createCard(info) {
   cardInfo.appendChild(status);
   cardInfo.appendChild(statusValue);
   newCard.appendChild(removeBtn);
-}
+};
 
 function showForm() {
   const form = document.querySelector(".form-div");
