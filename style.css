@@ -56,12 +56,22 @@
 .new-card {
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
   background-color: ivory;
   border-radius: 1ch;
-  width: 1fr;
-  height: 15rem;
+  height: min-content;
   padding: 4ch;
+}
+
+.card-info {
+  display: grid;
+  grid-template-columns: 10ch 1fr;
+  grid-template-rows: 3ch;
+  gap: 2ch;
+}
+
+.new-card > button {
+  align-self: center;
+  margin-top: 5ch;
 }
 
 .form-div {

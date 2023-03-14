@@ -40,13 +40,16 @@ function createCard(info) {
   const newCard = document.createElement("div");
   newCard.className = "new-card";
 
+  const cardInfo = document.createElement("div");
+  cardInfo.className = "card-info";
+
   const title = document.createElement("h4");
   title.className = "title";
   title.textContent = "Title:";
 
   const titleValue = document.createElement("p");
   titleValue.className = "title-value";
-  titleValue.textContent = Book.title;
+  titleValue.textContent = `${Book.title}`;
 
   const author = document.createElement("h4");
   author.className = "author";
@@ -54,7 +57,7 @@ function createCard(info) {
 
   const authorValue = document.createElement("p");
   authorValue.className = "author-value";
-  authorValue.textContent = Book.author;
+  authorValue.textContent = `${Book.author}`;
 
   const pages = document.createElement("h4");
   pages.className = "pages";
@@ -62,7 +65,7 @@ function createCard(info) {
 
   const pagesValue = document.createElement("p");
   pagesValue.className = "pages-value";
-  pagesValue.textContent = Book.pages;
+  pagesValue.textContent = `${Book.pages}`;
 
   const status = document.createElement("h4");
   status.className = "status";
@@ -81,14 +84,15 @@ function createCard(info) {
   removeBtn.textContent = "Remove Book";
 
   libEntry.appendChild(newCard);
-  newCard.appendChild(title);
-  title.appendChild(titleValue);
-  newCard.appendChild(author);
-  author.appendChild(authorValue);
-  newCard.appendChild(pages);
-  pages.appendChild(pagesValue);
-  newCard.appendChild(status);
-  status.appendChild(statusValue);
+  newCard.appendChild(cardInfo);
+  cardInfo.appendChild(title);
+  cardInfo.appendChild(titleValue);
+  cardInfo.appendChild(author);
+  cardInfo.appendChild(authorValue);
+  cardInfo.appendChild(pages);
+  cardInfo.appendChild(pagesValue);
+  cardInfo.appendChild(status);
+  cardInfo.appendChild(statusValue);
   newCard.appendChild(removeBtn);
 }
 
