@@ -35,27 +35,61 @@ function getCardInfo(arr) {
 }
 
 function createCard(info) {
+  const libEntry = document.querySelector(".bookshelf");
+
   const newCard = document.createElement("div");
   newCard.className = "new-card";
 
-  const title = document.createTextNode(`<h6>Title:</h6> <p>${Book.title}</p>`);
-  const author = document.createTextNode(
-    `<h6>Author:</h6> <p>${Book.author}</p>`
-  );
-  const pages = document.createTextNode(`<h6>Pages:</h6> <p>${Book.pages}</p>`);
-  const status = document.createTextNode(
-    `<h6>Status:</h6> <p>${Book.status}</p>`
-  ); // find how to create a checkbox
+  const title = document.createElement("h4");
+  title.className = "title";
+  title.textContent = "Title:";
 
-  newCard.appendChild(title);
-  newCard.appendChild(author);
-  newCard.appendChild(pages);
-  newCard.appendChild(status);
+  const titleValue = document.createElement("p");
+  titleValue.className = "title-value";
+  titleValue.textContent = Book.title;
 
-  const libEntry = document.querySelector(".bookshelf");
+  const author = document.createElement("h4");
+  author.className = "author";
+  author.textContent = "Author:";
+
+  const authorValue = document.createElement("p");
+  authorValue.className = "author-value";
+  authorValue.textContent = Book.author;
+
+  const pages = document.createElement("h4");
+  pages.className = "pages";
+  pages.textContent = "Pages:";
+
+  const pagesValue = document.createElement("p");
+  pagesValue.className = "pages-value";
+  pagesValue.textContent = Book.pages;
+
+  const status = document.createElement("h4");
+  status.className = "status";
+  status.textContent = "Finished:";
+
+  const statusValue = document.createElement("checkbox");
+  statusValue.type = "checkbox";
+  statusValue.name = "cardInfo";
+  statusValue.id = "satus-value";
+  statusValue.className = "status-value";
+
+  const removeBtn = document.createElement("button");
+  removeBtn.type = "button";
+  removeBtn.value = "remove";
+  removeBtn.class = "remove";
+  removeBtn.textContent = "Remove Book";
+
   libEntry.appendChild(newCard);
-
-  return newCard;
+  newCard.appendChild(title);
+  title.appendChild(titleValue);
+  newCard.appendChild(author);
+  author.appendChild(authorValue);
+  newCard.appendChild(pages);
+  pages.appendChild(pagesValue);
+  newCard.appendChild(status);
+  status.appendChild(statusValue);
+  newCard.appendChild(removeBtn);
 }
 
 function appendCard(parent, child) {
