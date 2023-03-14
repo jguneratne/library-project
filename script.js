@@ -96,17 +96,17 @@ Book.prototype.createCard = function () {
   newCard.appendChild(removeBtn);
 };
 
-function showForm() {
+Book.prototype.showForm = function () {
   const form = document.querySelector(".form-div");
 
   form.style.display = "block";
-}
+};
 
 // Global Variables
 const addBookBtn = document.querySelector(".add-book");
 
 // Event Listeners
-addBookBtn.addEventListener("pointerdown", showForm);
+addBookBtn.addEventListener("pointerdown", Book.prototype.showForm);
 
 // Function Calls
 getCardInfo(myLibrary);
