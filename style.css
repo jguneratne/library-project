@@ -66,7 +66,12 @@
   display: grid;
   grid-template-columns: 10ch 1fr;
   grid-template-rows: 3ch;
+  justify-items: start;
   gap: 2ch;
+}
+
+.remove {
+  text-align: left;
 }
 
 .new-card > button {

@@ -71,8 +71,8 @@ function createCard(info) {
   status.className = "status";
   status.textContent = "Finished:";
 
-  const statusValue = document.createElement("checkbox");
-  statusValue.type = "checkbox";
+  const statusValue = document.createElement("INPUT");
+  statusValue.setAttribute("type", "checkbox");
   statusValue.name = "cardInfo";
   statusValue.id = "satus-value";
   statusValue.className = "status-value";
