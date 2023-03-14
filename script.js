@@ -96,10 +96,6 @@ function createCard(info) {
   newCard.appendChild(removeBtn);
 }
 
-function appendCard(parent, child) {
-  parent.appendChild(child);
-}
-
 function showForm() {
   const form = document.querySelector(".form-div");
 
