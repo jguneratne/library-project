@@ -10,10 +10,10 @@ function Book(title, author, pages, status) {
   this.status = status;
 }
 
-function addBookToLibrary() {
+Book.prototype.addBookToLibrary = function () {
   // Take user input and feed it into new Book instantiation
   // Feed input into myLibrary array
-}
+};
 
 function getCardInfo(arr) {
   let newCardInfo = "";
@@ -103,7 +103,7 @@ Book.prototype.showForm = function () {
 };
 
 // Global Variables
-const addBookBtn = document.querySelector(".add-book");
+const addBookBtn = document.querySelector(".show-form-btn");
 
 // Event Listeners
 addBookBtn.addEventListener("pointerdown", Book.prototype.showForm);
