@@ -19,7 +19,8 @@ const bookEntry = new Book(
 
 Book.prototype.addBookToLibrary = function (e) {
   e.preventDefault(); // Stop form from submitting to server
-  Book.prototype.createCard();
+  bookEntry;
+  Book.prototype.createCard(bookEntry);
   myLibrary.push(bookEntry);
   document.forms[0].reset(); // clears form for next entry
 };
