@@ -3,6 +3,13 @@
   padding: 0;
   height: 100%;
   box-sizing: border-box;
+
+  --newCardColor: #fffff0;
+  --headFootColor: #fff9e3;
+  --mainColor: #8aa6a3;
+  --bookshelfColor: #35706a;
+  --formColor: #d0e8cf;
+  --btnColor: #e5e4e4;
 }
 
 .container {
@@ -13,7 +20,7 @@
 /* Header */
 
 .header {
-  background-color: antiquewhite;
+  background-color: var(--headFootColor);
   grid-area: 1 / 1 / 2 / 2;
 
   display: grid;
@@ -30,14 +37,14 @@
   height: 8ch;
   border: none;
   align-self: center;
-  background-color: antiquewhite;
+  background-color: var(--headFootColor);
   cursor: pointer;
 }
 
 /* Main/Bookshelf */
 
 .main {
-  background-color: aqua;
+  background-color: var(--mainColor);
   grid-area: 2 / 1 / 3 / 2;
 }
 
@@ -50,13 +57,13 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  background-color: violet;
+  background-color: var(--bookshelfColor);
 }
 
 .new-card {
   display: flex;
   flex-direction: column;
-  background-color: ivory;
+  background-color: var(--newCardColor);
   border-radius: 1ch;
   height: min-content;
   padding: 4ch;
@@ -77,6 +84,7 @@
 .new-card > button {
   align-self: center;
   margin-top: 5ch;
+  background-color: var(--btnColor);
 }
 
 .form-div {
@@ -98,7 +106,7 @@
   bottom: 0;
   margin: auto;
   padding: 5ch;
-  background-color: aquamarine;
+  background-color: var(--formColor);
   border-radius: 3ch;
   outline: 1px solid black;
   outline-offset: -2ch;
@@ -135,7 +143,7 @@ input[type="text"] {
 /* Footer */
 
 footer {
-  background-color: antiquewhite;
+  background-color: var(--headFootColor);
   grid-area: 3 / 1 / 4 / 2;
 
   display: grid;
