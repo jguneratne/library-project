@@ -10,9 +10,18 @@ function Book(title, author, pages, status) {
   this.status = status;
 }
 
-Book.prototype.addBookToLibrary = function () {
-  // Take user input and feed it into new Book instantiation
-  // Feed input into myLibrary array
+const bookEntry = new Book(
+  document.getElementById("title").value,
+  document.getElementById("author").value,
+  document.getElementById("pages").value,
+  document.getElementById("status").value
+);
+
+Book.prototype.addBookToLibrary = function (e) {
+  e.preventDefault(); // Stop form from submitting to server
+  Book.prototype.createCard();
+  myLibrary.push(bookEntry);
+  document.forms[0].reset(); // clears form for next entry
 };
 
 function getCardInfo(arr) {
@@ -27,8 +36,6 @@ function getCardInfo(arr) {
     for (let j = 0; j < innerArrayLength; j++) {
       // console.log("[" + i + "," + j + "] = " + arr[i][j]);
       newCardInfo += `<p>${arr[i][j]}</p>`;
-
-      createCard(newCardInfo);
     }
   }
   return newCardInfo;
@@ -49,7 +56,7 @@ Book.prototype.createCard = function () {
 
   const titleValue = document.createElement("p");
   titleValue.className = "title-value";
-  titleValue.textContent = `${Book.title}`;
+  titleValue.textContent = `${bookEntry.title}`;
 
   const author = document.createElement("h4");
   author.className = "author";
@@ -57,7 +64,7 @@ Book.prototype.createCard = function () {
 
   const authorValue = document.createElement("p");
   authorValue.className = "author-value";
-  authorValue.textContent = `${Book.author}`;
+  authorValue.textContent = `${bookEntry.author}`;
 
   const pages = document.createElement("h4");
   pages.className = "pages";
@@ -65,7 +72,7 @@ Book.prototype.createCard = function () {
 
   const pagesValue = document.createElement("p");
   pagesValue.className = "pages-value";
-  pagesValue.textContent = `${Book.pages}`;
+  pagesValue.textContent = `${bookEntry.pages}`;
 
   const status = document.createElement("h4");
   status.className = "status";
@@ -103,10 +110,13 @@ Book.prototype.showForm = function () {
 };
 
 // Global Variables
-const addBookBtn = document.querySelector(".show-form-btn");
+const bookFormBtn = document.querySelector(".show-form-btn");
+const addBook = document.querySelector(".add-book");
 
 // Event Listeners
-addBookBtn.addEventListener("pointerdown", Book.prototype.showForm);
+bookFormBtn.addEventListener("pointerdown", Book.prototype.showForm);
+
+addBook.addEventListener("pointerdown", Book.prototype.addBookToLibrary);
 
 // Function Calls
 getCardInfo(myLibrary);
