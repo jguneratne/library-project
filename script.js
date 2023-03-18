@@ -9,13 +9,6 @@ function Book(title, author, pages, status) {
   this.status = status;
 }
 
-const bookEntry = new Book(
-  document.getElementById("title").value,
-  document.getElementById("author").value,
-  document.getElementById("pages").value,
-  document.getElementById("status").value
-);
-
 Book.prototype.addBookToLibrary = function (e) {
   e.preventDefault(); // Stop form from submitting to server
   Book.prototype.createCard();
@@ -111,19 +104,23 @@ Book.prototype.createCard = function () {
 };
 
 Book.prototype.showForm = function () {
-  const form = document.querySelector(".form-div");
-
   form.style.display = "block";
+};
+
+Book.prototype.hideForm = function () {
+  form.style.display = "none";
 };
 
 // Global Variables
 const bookFormBtn = document.querySelector(".show-form-btn");
+const form = document.querySelector(".form-div");
 const addBook = document.querySelector(".add-book");
 
 // Event Listeners
 bookFormBtn.addEventListener("pointerdown", Book.prototype.showForm);
 
 addBook.addEventListener("pointerdown", Book.prototype.addBookToLibrary);
+addBook.addEventListener("pointerdown", Book.prototype.hideForm);
 
 // Function Calls
 getCardInfo(myLibrary);
