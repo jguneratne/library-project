@@ -1,6 +1,5 @@
 let myLibrary = [
-  // Store book info from addBookToLibrary user input
-  ["The Hobbit", "JRR Tolkein", "295", "Read"],
+  // Store book info from createCard method
 ];
 
 function Book(title, author, pages, status) {
@@ -19,9 +18,7 @@ const bookEntry = new Book(
 
 Book.prototype.addBookToLibrary = function (e) {
   e.preventDefault(); // Stop form from submitting to server
-  bookEntry;
-  Book.prototype.createCard(bookEntry);
-  myLibrary.push(bookEntry);
+  Book.prototype.createCard();
   document.forms[0].reset(); // clears form for next entry
 };
 
@@ -43,6 +40,15 @@ function getCardInfo(arr) {
 }
 
 Book.prototype.createCard = function () {
+  const bookEntry = new Book(
+    document.getElementById("title").value,
+    document.getElementById("author").value,
+    document.getElementById("pages").value,
+    document.getElementById("status").value
+  );
+
+  myLibrary.push(bookEntry);
+
   const libEntry = document.querySelector(".bookshelf");
 
   const newCard = document.createElement("div");
