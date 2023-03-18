@@ -9,6 +9,17 @@ function Book(title, author, pages, status) {
   this.status = status;
 }
 
+Book.prototype.getBookData = function () {
+  const bookEntry = new Book(
+    document.getElementById("title").value,
+    document.getElementById("author").value,
+    document.getElementById("pages").value,
+    document.getElementById("status").value
+  );
+
+  myLibrary.push(bookEntry);
+};
+
 Book.prototype.addBookToLibrary = function (e) {
   e.preventDefault(); // Stop form from submitting to server
   Book.prototype.createCard();
@@ -33,15 +44,6 @@ function getCardInfo(arr) {
 }
 
 Book.prototype.createCard = function () {
-  const bookEntry = new Book(
-    document.getElementById("title").value,
-    document.getElementById("author").value,
-    document.getElementById("pages").value,
-    document.getElementById("status").value
-  );
-
-  myLibrary.push(bookEntry);
-
   const libEntry = document.querySelector(".bookshelf");
 
   const newCard = document.createElement("div");
@@ -119,7 +121,7 @@ const addBook = document.querySelector(".add-book");
 // Event Listeners
 bookFormBtn.addEventListener("pointerdown", Book.prototype.showForm);
 
-addBook.addEventListener("pointerdown", Book.prototype.addBookToLibrary);
+addBook.addEventListener("pointerdown", Book.prototype.getBookData);
 addBook.addEventListener("pointerdown", Book.prototype.hideForm);
 
 // Function Calls
