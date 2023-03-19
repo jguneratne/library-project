@@ -36,21 +36,10 @@ Book.prototype.getCardInfo = function (myLibrary) {
   });
 };
 
-// Book.prototype.getCardInfo = function (arr) {
-//   let newCardInfo = myLibrary;
+// Book.prototype.getCardInfo = function () {
+//   for (let i = 0; i < myLibrary.length; i++) {
 
-//   // Loop through array to display each book (in a Table or in their own cards)
-//   for (let i = 0; i < arr.length; i++) {
-//     // get the size of the inner array
-//     const innerArrayLength = arr[i].length;
-
-//     // loop the inner array
-//     for (let j = 0; j < innerArrayLength; j++) {
-//       // console.log("[" + i + "," + j + "] = " + arr[i][j]);
-//       newCardInfo += `<p>${arr[i][j]}</p>`;
-//     }
 //   }
-//   return newCardInfo;
 // };
 
 Book.prototype.createCard = function () {
@@ -114,6 +103,8 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(status);
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
+
+    return myLibrary[i];
   }
 };
 
