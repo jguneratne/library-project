@@ -25,15 +25,6 @@ Book.prototype.getBookData = function () {
 Book.prototype.addBookToLibrary = function (e) {
   e.preventDefault(); // Stop form from submitting to server
   Book.prototype.createCard();
-  document.forms[0].reset(); // Clears form for next entry
-};
-
-Book.prototype.getCardInfo = function (myLibrary) {
-  myLibrary.forEach(function (title, author, pages, status) {
-    console.log(
-      `Title: ${title}), Author: ${author}, Pages: ${pages}, Status: ${status}`
-    );
-  });
 };
 
 // Book.prototype.getCardInfo = function () {
@@ -114,6 +105,7 @@ Book.prototype.showForm = function () {
 
 Book.prototype.hideForm = function () {
   form.style.display = "none";
+  document.forms[0].reset(); // Clears form for next entry
 };
 
 // Global Variables
