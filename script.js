@@ -1,5 +1,5 @@
 let myLibrary = [
-  // Store book info from createCard method
+  // Store book info from getBookData method
 ];
 
 function Book(title, author, pages, status) {
@@ -18,91 +18,103 @@ Book.prototype.getBookData = function () {
   );
 
   myLibrary.push(bookEntry);
+
+  Book.prototype.createCard();
 };
 
 Book.prototype.addBookToLibrary = function (e) {
   e.preventDefault(); // Stop form from submitting to server
   Book.prototype.createCard();
-  document.forms[0].reset(); // clears form for next entry
+  document.forms[0].reset(); // Clears form for next entry
 };
 
-function getCardInfo(arr) {
-  let newCardInfo = "";
+Book.prototype.getCardInfo = function (myLibrary) {
+  myLibrary.forEach(function (title, author, pages, status) {
+    console.log(
+      `Title: ${title}), Author: ${author}, Pages: ${pages}, Status: ${status}`
+    );
+  });
+};
 
-  // Loop through array to display each book (in a Table or in their own cards)
-  for (let i = 0; i < arr.length; i++) {
-    // get the size of the inner array
-    var innerArrayLength = arr[i].length;
+// Book.prototype.getCardInfo = function (arr) {
+//   let newCardInfo = myLibrary;
 
-    // loop the inner array
-    for (let j = 0; j < innerArrayLength; j++) {
-      // console.log("[" + i + "," + j + "] = " + arr[i][j]);
-      newCardInfo += `<p>${arr[i][j]}</p>`;
-    }
-  }
-  return newCardInfo;
-}
+//   // Loop through array to display each book (in a Table or in their own cards)
+//   for (let i = 0; i < arr.length; i++) {
+//     // get the size of the inner array
+//     const innerArrayLength = arr[i].length;
+
+//     // loop the inner array
+//     for (let j = 0; j < innerArrayLength; j++) {
+//       // console.log("[" + i + "," + j + "] = " + arr[i][j]);
+//       newCardInfo += `<p>${arr[i][j]}</p>`;
+//     }
+//   }
+//   return newCardInfo;
+// };
 
 Book.prototype.createCard = function () {
-  const libEntry = document.querySelector(".bookshelf");
+  for (let i = 0; i < myLibrary.length; i++) {
+    const libEntry = document.querySelector(".bookshelf");
 
-  const newCard = document.createElement("div");
-  newCard.className = "new-card";
+    const newCard = document.createElement("div");
+    newCard.className = "new-card";
 
-  const cardInfo = document.createElement("div");
-  cardInfo.className = "card-info";
+    const cardInfo = document.createElement("div");
+    cardInfo.className = "card-info";
 
-  const title = document.createElement("h4");
-  title.className = "title";
-  title.textContent = "Title:";
+    const title = document.createElement("h4");
+    title.className = "title";
+    title.textContent = "Title:";
 
-  const titleValue = document.createElement("p");
-  titleValue.className = "title-value";
-  titleValue.textContent = `${bookEntry.title}`;
+    const titleValue = document.createElement("p");
+    titleValue.className = "title-value";
+    titleValue.textContent = `${myLibrary[i].title}`;
 
-  const author = document.createElement("h4");
-  author.className = "author";
-  author.textContent = "Author:";
+    const author = document.createElement("h4");
+    author.className = "author";
+    author.textContent = "Author:";
 
-  const authorValue = document.createElement("p");
-  authorValue.className = "author-value";
-  authorValue.textContent = `${bookEntry.author}`;
+    const authorValue = document.createElement("p");
+    authorValue.className = "author-value";
+    authorValue.textContent = `${myLibrary[i].author}`;
 
-  const pages = document.createElement("h4");
-  pages.className = "pages";
-  pages.textContent = "Pages:";
+    const pages = document.createElement("h4");
+    pages.className = "pages";
+    pages.textContent = "Pages:";
 
-  const pagesValue = document.createElement("p");
-  pagesValue.className = "pages-value";
-  pagesValue.textContent = `${bookEntry.pages}`;
+    const pagesValue = document.createElement("p");
+    pagesValue.className = "pages-value";
+    pagesValue.textContent = `${myLibrary[i].pages}`;
 
-  const status = document.createElement("h4");
-  status.className = "status";
-  status.textContent = "Finished:";
+    const status = document.createElement("h4");
+    status.className = "status";
+    status.textContent = "Finished:";
 
-  const statusValue = document.createElement("INPUT");
-  statusValue.setAttribute("type", "checkbox");
-  statusValue.name = "cardInfo";
-  statusValue.id = "satus-value";
-  statusValue.className = "status-value";
+    const statusValue = document.createElement("INPUT");
+    statusValue.setAttribute("type", "checkbox");
+    statusValue.name = "cardInfo";
+    statusValue.id = "satus-value";
+    statusValue.className = "status-value";
 
-  const removeBtn = document.createElement("button");
-  removeBtn.type = "button";
-  removeBtn.value = "remove";
-  removeBtn.class = "remove";
-  removeBtn.textContent = "Remove Book";
+    const removeBtn = document.createElement("button");
+    removeBtn.type = "button";
+    removeBtn.value = "remove";
+    removeBtn.class = "remove";
+    removeBtn.textContent = "Remove Book";
 
-  libEntry.appendChild(newCard);
-  newCard.appendChild(cardInfo);
-  cardInfo.appendChild(title);
-  cardInfo.appendChild(titleValue);
-  cardInfo.appendChild(author);
-  cardInfo.appendChild(authorValue);
-  cardInfo.appendChild(pages);
-  cardInfo.appendChild(pagesValue);
-  cardInfo.appendChild(status);
-  cardInfo.appendChild(statusValue);
-  newCard.appendChild(removeBtn);
+    libEntry.appendChild(newCard);
+    newCard.appendChild(cardInfo);
+    cardInfo.appendChild(title);
+    cardInfo.appendChild(titleValue);
+    cardInfo.appendChild(author);
+    cardInfo.appendChild(authorValue);
+    cardInfo.appendChild(pages);
+    cardInfo.appendChild(pagesValue);
+    cardInfo.appendChild(status);
+    cardInfo.appendChild(statusValue);
+    newCard.appendChild(removeBtn);
+  }
 };
 
 Book.prototype.showForm = function () {
@@ -125,4 +137,4 @@ addBook.addEventListener("pointerdown", Book.prototype.getBookData);
 addBook.addEventListener("pointerdown", Book.prototype.hideForm);
 
 // Function Calls
-getCardInfo(myLibrary);
+// Book.prototype.getCardInfo(myLibrary);
