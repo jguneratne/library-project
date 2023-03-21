@@ -21,13 +21,7 @@ Book.prototype.getBookData = function (e) {
 
   myLibrary.push(bookEntry);
 
-  if (
-    myLibrary.includes(bookEntry.title && bookEntry.author && bookEntry.pages)
-  ) {
-    return;
-  } else {
-    Book.prototype.createCard();
-  }
+  Book.prototype.createCard();
 };
 
 Book.prototype.createCard = function () {
@@ -92,7 +86,7 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
 
-    // return myLibrary[i];
+    return myLibrary.pop();
   }
 };
 
