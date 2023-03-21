@@ -26,6 +26,8 @@ Book.prototype.getBookData = function (e) {
 
 Book.prototype.createCard = function () {
   for (let i = 0; i < myLibrary.length; i++) {
+    let entry = Object.values(myLibrary[i]);
+
     const libEntry = document.querySelector(".bookshelf");
 
     const newCard = document.createElement("div");
@@ -40,7 +42,7 @@ Book.prototype.createCard = function () {
 
     const titleValue = document.createElement("p");
     titleValue.className = "title-value";
-    titleValue.textContent = `${myLibrary[i].title}`;
+    titleValue.textContent = `${entry[0]}`;
 
     const author = document.createElement("h4");
     author.className = "author";
@@ -48,7 +50,7 @@ Book.prototype.createCard = function () {
 
     const authorValue = document.createElement("p");
     authorValue.className = "author-value";
-    authorValue.textContent = `${myLibrary[i].author}`;
+    authorValue.textContent = `${entry[1]}`;
 
     const pages = document.createElement("h4");
     pages.className = "pages";
@@ -56,7 +58,7 @@ Book.prototype.createCard = function () {
 
     const pagesValue = document.createElement("p");
     pagesValue.className = "pages-value";
-    pagesValue.textContent = `${myLibrary[i].pages}`;
+    pagesValue.textContent = `${entry[2]}`;
 
     const status = document.createElement("h4");
     status.className = "status";
