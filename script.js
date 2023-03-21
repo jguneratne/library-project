@@ -9,7 +9,9 @@ function Book(title, author, pages, status) {
   this.status = status;
 }
 
-Book.prototype.getBookData = function () {
+Book.prototype.getBookData = function (e) {
+  e.preventDefault(); // Stop form from submitting to server
+
   const bookEntry = new Book(
     document.getElementById("title").value,
     document.getElementById("author").value,
@@ -21,17 +23,6 @@ Book.prototype.getBookData = function () {
 
   Book.prototype.createCard();
 };
-
-Book.prototype.addBookToLibrary = function (e) {
-  e.preventDefault(); // Stop form from submitting to server
-  Book.prototype.createCard();
-};
-
-// Book.prototype.getCardInfo = function () {
-//   for (let i = 0; i < myLibrary.length; i++) {
-
-//   }
-// };
 
 Book.prototype.createCard = function () {
   for (let i = 0; i < myLibrary.length; i++) {
@@ -95,7 +86,7 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
 
-    return myLibrary[i];
+    // return myLibrary[i];
   }
 };
 
