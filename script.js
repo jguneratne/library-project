@@ -21,13 +21,17 @@ Book.prototype.getBookData = function (e) {
 
   myLibrary.push(bookEntry);
 
-  Book.prototype.createCard();
+  if (
+    myLibrary.includes(bookEntry.title && bookEntry.author && bookEntry.pages)
+  ) {
+    return;
+  } else {
+    Book.prototype.createCard();
+  }
 };
 
 Book.prototype.createCard = function () {
   for (let i = 0; i < myLibrary.length; i++) {
-    let entry = Object.values(myLibrary[i]);
-
     const libEntry = document.querySelector(".bookshelf");
 
     const newCard = document.createElement("div");
@@ -42,7 +46,7 @@ Book.prototype.createCard = function () {
 
     const titleValue = document.createElement("p");
     titleValue.className = "title-value";
-    titleValue.textContent = `${entry[0]}`;
+    titleValue.textContent = `${myLibrary[i].title}`;
 
     const author = document.createElement("h4");
     author.className = "author";
@@ -50,7 +54,7 @@ Book.prototype.createCard = function () {
 
     const authorValue = document.createElement("p");
     authorValue.className = "author-value";
-    authorValue.textContent = `${entry[1]}`;
+    authorValue.textContent = `${myLibrary[i].author}`;
 
     const pages = document.createElement("h4");
     pages.className = "pages";
@@ -58,7 +62,7 @@ Book.prototype.createCard = function () {
 
     const pagesValue = document.createElement("p");
     pagesValue.className = "pages-value";
-    pagesValue.textContent = `${entry[2]}`;
+    pagesValue.textContent = `${myLibrary[i].pages}`;
 
     const status = document.createElement("h4");
     status.className = "status";
