@@ -31,6 +31,7 @@ Book.prototype.createCard = function () {
 
     const newCard = document.createElement("div");
     newCard.className = "new-card";
+    newCard.id = "new-card" + i;
 
     const cardInfo = document.createElement("div");
     cardInfo.className = "card-info";
@@ -69,7 +70,7 @@ Book.prototype.createCard = function () {
     statusValue.id = "satus-value";
     statusValue.className = "status-value";
 
-    const removeBtn = document.createElement("button");
+    removeBtn = document.createElement("button");
     removeBtn.type = "button";
     removeBtn.value = "remove";
     removeBtn.class = "remove";
@@ -117,16 +118,12 @@ const bookFormBtn = document.querySelector(".show-form-btn");
 const form = document.querySelector(".form-div");
 const addBook = document.querySelector(".add-book");
 const newCard = document.querySelector(".new-card");
-// const removeBtn = document.querySelector(".remove");
+let removeBtn = document.querySelector(".remove");
 
 // Event Listeners
 bookFormBtn.addEventListener("pointerdown", Book.prototype.showForm);
 
 addBook.addEventListener("pointerdown", Book.prototype.getBookData);
-// addBook.addEventListener("pointerdown", Book.prototype.replaceCards);
 addBook.addEventListener("pointerdown", Book.prototype.hideForm);
 
 // removeBtn.addEventListener("pointerdown"), Book.prototype.removeBook;
-
-// Function Calls
-// Book.prototype.getCardInfo(myLibrary);
