@@ -21,6 +21,7 @@ Book.prototype.getBookData = function (e) {
 
   myLibrary.push(bookEntry);
 
+  Book.prototype.replaceCards();
   Book.prototype.createCard();
 };
 
@@ -85,10 +86,22 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(status);
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
-
-    return myLibrary.pop();
   }
 };
+
+Book.prototype.replaceCards = function () {
+  // Replaces all cards on each new card creation to prevent duplicates
+  let parent = document.querySelector(".bookshelf");
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+};
+
+// Book.ptototype.removeBook = function () {
+//   let arrayPosition = myLibrary.indexOf();
+
+//   // Look up how to use indexOf() or findInex() to locate unknown array index
+// };
 
 Book.prototype.showForm = function () {
   form.style.display = "block";
@@ -103,12 +116,17 @@ Book.prototype.hideForm = function () {
 const bookFormBtn = document.querySelector(".show-form-btn");
 const form = document.querySelector(".form-div");
 const addBook = document.querySelector(".add-book");
+const newCard = document.querySelector(".new-card");
+// const removeBtn = document.querySelector(".remove");
 
 // Event Listeners
 bookFormBtn.addEventListener("pointerdown", Book.prototype.showForm);
 
 addBook.addEventListener("pointerdown", Book.prototype.getBookData);
+// addBook.addEventListener("pointerdown", Book.prototype.replaceCards);
 addBook.addEventListener("pointerdown", Book.prototype.hideForm);
+
+// removeBtn.addEventListener("pointerdown"), Book.prototype.removeBook;
 
 // Function Calls
 // Book.prototype.getCardInfo(myLibrary);
