@@ -70,10 +70,10 @@ Book.prototype.createCard = function () {
     statusValue.id = "satus-value";
     statusValue.className = "status-value";
 
-    removeBtn = document.createElement("button");
+    const removeBtn = document.createElement("button");
     removeBtn.type = "button";
     removeBtn.value = "remove";
-    removeBtn.class = "remove";
+    removeBtn.className = "remove";
     removeBtn.textContent = "Remove Book";
 
     libEntry.appendChild(newCard);
@@ -87,6 +87,14 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(status);
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
+
+    removeBtn.addEventListener("pointerdown", function () {
+      const parent = document.querySelector(".bookshelf");
+      let deleteCard = document.getElementById("new-card" + i);
+
+      let removed = parent.removeChild(deleteCard);
+      console.log(removed);
+    });
   }
 };
 
@@ -98,10 +106,15 @@ Book.prototype.replaceCards = function () {
   }
 };
 
-// Book.ptototype.removeBook = function () {
-//   let arrayPosition = myLibrary.indexOf();
+// Book.prototype.removeBook = function () {
+//   const parent = document.querySelector(".bookshelf");
+//   let deleteCard = document.getElementById("new-card" + i);
 
-//   // Look up how to use indexOf() or findInex() to locate unknown array index
+//   parent.removeChild(deleteCard);
+
+//   //   let arrayPosition = myLibrary.indexOf();
+
+//   //   // Look up how to use indexOf() or findInex() to locate unknown array index
 // };
 
 Book.prototype.showForm = function () {
@@ -118,12 +131,9 @@ const bookFormBtn = document.querySelector(".show-form-btn");
 const form = document.querySelector(".form-div");
 const addBook = document.querySelector(".add-book");
 const newCard = document.querySelector(".new-card");
-let removeBtn = document.querySelector(".remove");
 
 // Event Listeners
 bookFormBtn.addEventListener("pointerdown", Book.prototype.showForm);
 
 addBook.addEventListener("pointerdown", Book.prototype.getBookData);
 addBook.addEventListener("pointerdown", Book.prototype.hideForm);
-
-// removeBtn.addEventListener("pointerdown"), Book.prototype.removeBook;
