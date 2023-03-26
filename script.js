@@ -89,13 +89,32 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
 
-    removeBtn.addEventListener("pointerdown", function () {
-      const parent = document.querySelector(".bookshelf");
-      let deleteCard = document.getElementById("new-card" + "-" + i);
+    removeBtn.addEventListener(
+      "pointerdown",
+      (Book.prototype.removeCard = function () {
+        const parent = document.querySelector(".bookshelf");
+        let deleteCard = document.getElementById("new-card" + "-" + i);
 
-      let removed = parent.removeChild(deleteCard);
-      console.log(removed);
-    });
+        let removedCard = parent.removeChild(deleteCard);
+        console.log(removedCard);
+      })
+    );
+
+    removeBtn.addEventListener(
+      "pointerdown",
+      (Book.prototype.removeArrayElement = function () {
+        const arrayPosition = myLibrary.findIndex((title) => {
+          return myLibrary[i].title === `${myLibrary[i].title}`;
+        });
+        console.log(arrayPosition);
+        console.log(newCard.dataset.cardNum);
+
+        if (parseInt(arrayPosition) === parseInt(newCard.dataset.cardNum)) {
+          let removedElement = myLibrary.splice(arrayPosition, 1);
+          console.log(removedElement);
+        }
+      })
+    );
   }
 };
 
