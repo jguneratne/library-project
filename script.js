@@ -31,7 +31,8 @@ Book.prototype.createCard = function () {
 
     const newCard = document.createElement("div");
     newCard.className = "new-card";
-    newCard.id = "new-card" + i;
+    newCard.id = "new-card" + "-" + i;
+    newCard.dataset.cardNum = i;
 
     const cardInfo = document.createElement("div");
     cardInfo.className = "card-info";
@@ -90,7 +91,7 @@ Book.prototype.createCard = function () {
 
     removeBtn.addEventListener("pointerdown", function () {
       const parent = document.querySelector(".bookshelf");
-      let deleteCard = document.getElementById("new-card" + i);
+      let deleteCard = document.getElementById("new-card" + "-" + i);
 
       let removed = parent.removeChild(deleteCard);
       console.log(removed);
@@ -105,17 +106,6 @@ Book.prototype.replaceCards = function () {
     parent.removeChild(parent.firstChild);
   }
 };
-
-// Book.prototype.removeBook = function () {
-//   const parent = document.querySelector(".bookshelf");
-//   let deleteCard = document.getElementById("new-card" + i);
-
-//   parent.removeChild(deleteCard);
-
-//   //   let arrayPosition = myLibrary.indexOf();
-
-//   //   // Look up how to use indexOf() or findInex() to locate unknown array index
-// };
 
 Book.prototype.showForm = function () {
   form.style.display = "block";
