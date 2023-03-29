@@ -32,7 +32,7 @@ Book.prototype.createCard = function () {
     const newCard = document.createElement("div");
     newCard.className = "new-card";
     newCard.id = "new-card" + "-" + i;
-    newCard.dataset.cardNum = i;
+    newCard.setAttribute("data-card-num", i);
 
     const cardInfo = document.createElement("div");
     cardInfo.className = "card-info";
@@ -93,26 +93,25 @@ Book.prototype.createCard = function () {
       "pointerdown",
       (Book.prototype.removeCard = function () {
         const parent = document.querySelector(".bookshelf");
-        let deleteCard = document.getElementById("new-card" + "-" + i);
+        let deleteCard = document.querySelector("[data-card-num]");
 
         let removedCard = parent.removeChild(deleteCard);
         console.log(removedCard);
+
+        Book.prototype.replaceCards();
+        Book.prototype.createCard();
       })
     );
 
     removeBtn.addEventListener(
       "pointerdown",
       (Book.prototype.removeArrayElement = function () {
-        const arrayPosition = myLibrary.findIndex((title) => {
-          return myLibrary[i].title === `${myLibrary[i].title}`;
-        });
-        console.log(arrayPosition);
-        console.log(newCard.dataset.cardNum);
+        let arrayPosition = newCard.dataset.cardNum;
 
-        if (parseInt(arrayPosition) === parseInt(newCard.dataset.cardNum)) {
-          let removedElement = myLibrary.splice(arrayPosition, 1);
-          console.log(removedElement);
-        }
+        console.log(arrayPosition);
+
+        let removedElement = myLibrary.splice(arrayPosition, 1);
+        console.log(removedElement);
       })
     );
   }
