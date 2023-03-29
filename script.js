@@ -91,6 +91,18 @@ Book.prototype.createCard = function () {
 
     removeBtn.addEventListener(
       "pointerdown",
+      (Book.prototype.removeArrayElement = function () {
+        let arrayPosition = newCard.dataset.cardNum;
+
+        console.log(arrayPosition);
+
+        let removedElement = myLibrary.splice(arrayPosition, 1);
+        console.log(removedElement);
+      })
+    );
+
+    removeBtn.addEventListener(
+      "pointerdown",
       (Book.prototype.removeCard = function () {
         const parent = document.querySelector(".bookshelf");
         let deleteCard = document.querySelector("[data-card-num]");
@@ -100,18 +112,6 @@ Book.prototype.createCard = function () {
 
         Book.prototype.replaceCards();
         Book.prototype.createCard();
-      })
-    );
-
-    removeBtn.addEventListener(
-      "pointerdown",
-      (Book.prototype.removeArrayElement = function () {
-        let arrayPosition = newCard.dataset.cardNum;
-
-        console.log(arrayPosition);
-
-        let removedElement = myLibrary.splice(arrayPosition, 1);
-        console.log(removedElement);
       })
     );
   }
