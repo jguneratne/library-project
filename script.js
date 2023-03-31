@@ -70,7 +70,7 @@ Book.prototype.createCard = function () {
     statusValue.setAttribute("type", "checkbox");
     statusValue.className = "status-value";
     statusValue.name = "cardInfo";
-    statusValue.id = "show-status";
+    statusValue.id = "show-status" + i;
     statusValue.value = "read";
 
     const removeBtn = document.createElement("button");
@@ -90,6 +90,12 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(status);
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
+
+    Book.prototype.readStatus = function () {
+      if (myLibrary[i].status === true && statusValue.checked === false) {
+        statusValue.checked = true;
+      }
+    };
 
     removeBtn.addEventListener(
       "pointerdown",
@@ -117,19 +123,6 @@ Book.prototype.createCard = function () {
       })
     );
   }
-};
-
-Book.prototype.readStatus = function () {
-  let readStatus = document.querySelector("#status");
-  let statusDisplay = document.querySelector("#show-status");
-
-  console.log(readStatus.checked);
-
-  if (readStatus.checked === true && statusDisplay.checked === false) {
-    statusDisplay.checked = true;
-  }
-
-  console.log(statusDisplay.checked);
 };
 
 Book.prototype.replaceCards = function () {
