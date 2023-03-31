@@ -13,16 +13,17 @@ Book.prototype.getBookData = function (e) {
   e.preventDefault(); // Stop form from submitting to server
 
   const bookEntry = new Book(
-    document.getElementById("title").value,
-    document.getElementById("author").value,
-    document.getElementById("pages").value,
-    document.getElementById("status").value
+    document.querySelector("#title").value,
+    document.querySelector("#author").value,
+    document.querySelector("#pages").value,
+    document.querySelector("#status").checked
   );
 
   myLibrary.push(bookEntry);
 
   Book.prototype.replaceCards();
   Book.prototype.createCard();
+  Book.prototype.readStatus();
 };
 
 Book.prototype.createCard = function () {
@@ -67,9 +68,10 @@ Book.prototype.createCard = function () {
 
     const statusValue = document.createElement("INPUT");
     statusValue.setAttribute("type", "checkbox");
-    statusValue.name = "cardInfo";
-    statusValue.id = "satus-value";
     statusValue.className = "status-value";
+    statusValue.name = "cardInfo";
+    statusValue.id = "show-status";
+    statusValue.value = "read";
 
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
@@ -115,6 +117,19 @@ Book.prototype.createCard = function () {
       })
     );
   }
+};
+
+Book.prototype.readStatus = function () {
+  let readStatus = document.querySelector("#status");
+  let statusDisplay = document.querySelector("#show-status");
+
+  console.log(readStatus.checked);
+
+  if (readStatus.checked === true && statusDisplay.checked === false) {
+    statusDisplay.checked = true;
+  }
+
+  console.log(statusDisplay.checked);
 };
 
 Book.prototype.replaceCards = function () {
