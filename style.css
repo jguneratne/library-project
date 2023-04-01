@@ -42,6 +42,7 @@
   --bookshelfColor: #35706a;
   --formColor: #d0e8cf;
   --btnColor: #e5e4e4;
+  --focusColor: #0e1f1d;
 }
 
 .container {
@@ -193,6 +194,11 @@ button.add-book {
 button.add-book:hover {
   background-color: var(--mainColor);
   cursor: pointer;
+}
+
+button.add-book:focus {
+  border: 2px solid var(--focusColor);
+  outline: 2px var(--focusColor);
 }
 
 /* Footer */
