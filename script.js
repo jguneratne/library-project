@@ -23,7 +23,6 @@ Book.prototype.getBookData = function (e) {
 
   Book.prototype.replaceCards();
   Book.prototype.createCard();
-  Book.prototype.readStatus();
 };
 
 Book.prototype.createCard = function () {
@@ -91,6 +90,18 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(status);
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
+
+    statusValue.addEventListener(
+      "pointerdown",
+      (Book.prototype.toggleReadStatus = function () {
+        if (myLibrary[i].status === true) {
+          myLibrary[i].status = false;
+        } else {
+          myLibrary[i].status === false;
+          myLibrary[i].status = true;
+        }
+      })
+    );
 
     removeBtn.addEventListener(
       "pointerdown",
