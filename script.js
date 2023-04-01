@@ -70,8 +70,9 @@ Book.prototype.createCard = function () {
     statusValue.setAttribute("type", "checkbox");
     statusValue.className = "status-value";
     statusValue.name = "cardInfo";
-    statusValue.id = "show-status" + i;
+    statusValue.id = "show-status";
     statusValue.value = "read";
+    statusValue.checked = myLibrary[i].status;
 
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
@@ -90,12 +91,6 @@ Book.prototype.createCard = function () {
     cardInfo.appendChild(status);
     cardInfo.appendChild(statusValue);
     newCard.appendChild(removeBtn);
-
-    Book.prototype.readStatus = function () {
-      if (myLibrary[i].status === true && statusValue.checked === false) {
-        statusValue.checked = true;
-      }
-    };
 
     removeBtn.addEventListener(
       "pointerdown",
