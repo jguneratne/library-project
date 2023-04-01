@@ -180,6 +180,21 @@ input[type="text"] {
   width: 10%;
 }
 
+button.add-book {
+  font-family: "Nunito";
+  font-style: regular;
+  font-weight: 400;
+  background-color: var(--btnColor);
+  padding: 0.8ch;
+  border-radius: 3ch;
+  border: 1px solid var(--bookshelfColor);
+}
+
+button.add-book:hover {
+  background-color: var(--mainColor);
+  cursor: pointer;
+}
+
 /* Footer */
 
 footer {
