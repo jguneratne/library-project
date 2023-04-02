@@ -170,8 +170,9 @@ label {
   display: inline-block;
   width: 8.5ch;
   font-family: "Nunito";
-  font-style: bold;
+
   font-weight: 500;
+  font-size: 2.15ch;
 }
 
 input[type="text"] {
@@ -179,6 +180,40 @@ input[type="text"] {
   flex: 1;
   height: 3ch;
   width: 10%;
+}
+
+input[type="checkbox"].statusValue {
+  align-self: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  height: 2.5ch;
+  width: 2.5ch;
+  border: 1px solid var(--bookshelfColor);
+  border-radius: 1ch;
+  outline: none;
+  background-color: var(--newCardColor);
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"].statusValue:checked {
+  border: 1px solid var(--bookshelfColor);
+  background-color: var(--newCardColor);
+}
+
+input[type="checkbox"].statusValue:checked::before {
+  content: "\2713";
+  color: var(--focusColor);
+  position: absolute;
+  bottom: -0.4ch;
+  font-size: 4ch;
+}
+
+input[type="checkbox"].statusValue:focus {
+  border: 2px solid var(--focusColor);
+  outline: 2px var(--focusColor);
 }
 
 button.add-book {
