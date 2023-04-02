@@ -280,6 +280,9 @@ footer {
   grid-template-columns: 1fr 1fr;
   align-content: center;
   align-items: center;
+
+  font-family: "Nunito";
+  font-weight: 400;
 }
 
 footer p {
