@@ -109,6 +109,17 @@
   padding: 4ch;
 }
 
+.new-card h4 {
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 2.1ch;
+}
+
+.new-card p {
+  font-family: "Nunito";
+  font-weight: 300;
+}
+
 .card-info {
   display: grid;
   grid-template-columns: 10ch 1fr;
@@ -125,6 +136,12 @@
   align-self: center;
   margin-top: 5ch;
   background-color: var(--btnColor);
+  font-family: "Nunito";
+  font-weight: 400;
+  font-size: 1.8ch;
+  padding: 0.8ch;
+  border-radius: 3ch;
+  border: 1px solid var(--bookshelfColor);
 }
 
 .form-div {
