@@ -50,6 +50,15 @@
   grid-template-rows: 1fr 7.5fr 0.8fr;
 }
 
+/* Focus Styles */
+.new-card > button:focus,
+input[type="text"]:focus,
+input[type="checkbox"].statusValue:focus,
+button.add-book:focus {
+  border: 2px solid var(--focusColor);
+  outline: 2px var(--focusColor);
+}
+
 /* Header */
 
 .header {
@@ -146,11 +155,6 @@
   border: 1px solid var(--bookshelfColor);
 }
 
-.new-card > button:focus {
-  border: 2px solid var(--focusColor);
-  outline: 2px var(--focusColor);
-}
-
 .form-div {
   display: none;
 }
@@ -213,11 +217,6 @@ input[type="text"] {
   border: 0.2ch solid var(--bookshelfColor);
 }
 
-input[type="text"]:focus {
-  border: 2px solid var(--focusColor);
-  outline: 2px var(--focusColor);
-}
-
 input[type="checkbox"].statusValue {
   align-self: center;
   -webkit-appearance: none;
@@ -247,11 +246,6 @@ input[type="checkbox"].statusValue:checked::before {
   font-size: 4ch;
 }
 
-input[type="checkbox"].statusValue:focus {
-  border: 2px solid var(--focusColor);
-  outline: 2px var(--focusColor);
-}
-
 button.add-book {
   font-family: "Nunito";
   font-weight: 400;
@@ -265,11 +259,6 @@ button.add-book {
 button.add-book:hover {
   background-color: var(--mainColor);
   cursor: pointer;
-}
-
-button.add-book:focus {
-  border: 2px solid var(--focusColor);
-  outline: 2px var(--focusColor);
 }
 
 /* Footer */
