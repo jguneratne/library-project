@@ -180,6 +180,18 @@ input[type="text"] {
   flex: 1;
   height: 3ch;
   width: 10%;
+  padding-left: 1ch;
+  font-family: "Nunito";
+  font-weight: 400;
+  font-size: 1.9ch;
+  background-color: var(--newCardColor);
+  border-radius: 1ch;
+  border: 0.2ch solid var(--bookshelfColor);
+}
+
+input[type="text"]:focus {
+  border: 2px solid var(--focusColor);
+  outline: 2px var(--focusColor);
 }
 
 input[type="checkbox"].statusValue {
