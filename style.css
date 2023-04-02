@@ -144,6 +144,11 @@
   border: 1px solid var(--bookshelfColor);
 }
 
+.new-card > button:focus {
+  border: 2px solid var(--focusColor);
+  outline: 2px var(--focusColor);
+}
+
 .form-div {
   display: none;
 }
