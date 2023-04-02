@@ -51,12 +51,43 @@
 }
 
 /* Focus Styles */
+
 .new-card > button:focus,
 input[type="text"]:focus,
 input[type="checkbox"].statusValue:focus,
 button.add-book:focus {
   border: 2px solid var(--focusColor);
   outline: 2px var(--focusColor);
+}
+
+button.show-form-btn:focus img {
+  border: 2px solid var(--focusColor);
+  outline: 2px var(--focusColor);
+  border-radius: 1ch;
+  outline-offset: none;
+}
+
+a:focus img {
+  border: 1px solid var(--focusColor);
+  border-radius: 1ch;
+  outline: 2px var(--focusColor);
+  height: 3.8ch;
+  width: 3.8ch;
+  outline-offset: none;
+}
+
+a:focus {
+  border: none;
+  outline: none;
+}
+
+button.show-form-btn:focus {
+  border: 5px solid white;
+  outline: 5px white;
+}
+
+footer:focus {
+  border: none;
 }
 
 /* Header */
