@@ -58,6 +58,8 @@
 
   display: grid;
   grid-template-columns: 5fr 0.7fr;
+
+  align-items: center;
 }
 
 .header h1 {
