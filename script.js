@@ -67,7 +67,7 @@ Book.prototype.createCard = function () {
 
     const statusValue = document.createElement("INPUT");
     statusValue.setAttribute("type", "checkbox");
-    statusValue.className = "status-value";
+    statusValue.className = "statusValue";
     statusValue.name = "cardInfo";
     statusValue.id = "show-status";
     statusValue.value = "read";
