@@ -218,8 +218,8 @@ input[type="checkbox"].statusValue:focus {
 
 button.add-book {
   font-family: "Nunito";
-  font-style: regular;
   font-weight: 400;
+  font-size: 1.8ch;
   background-color: var(--btnColor);
   padding: 0.8ch;
   border-radius: 3ch;
