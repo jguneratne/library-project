@@ -303,6 +303,10 @@ input[type="checkbox"].statusValue:checked::before {
 }
 
 button.add-book {
+  display: none;
+}
+
+input[type="submit"].add-book {
   font-family: "Nunito";
   font-weight: 400;
   font-size: 1.8ch;
