@@ -92,7 +92,7 @@ Book.prototype.createCard = function () {
     newCard.appendChild(removeBtn);
 
     statusValue.addEventListener(
-      "pointerdown",
+      "change",
       (Book.prototype.toggleReadStatus = function () {
         if (myLibrary[i].status === true) {
           myLibrary[i].status = false;
