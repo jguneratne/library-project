@@ -43,6 +43,8 @@
   --formColor: #d0e8cf;
   --btnColor: #e5e4e4;
   --focusColor: #0e1f1d;
+  --invalidBGColor: rgb(247, 189, 189);
+  --invalidBorderColor: rgb(249, 80, 80);
 }
 
 .container {
@@ -54,6 +56,7 @@
 
 .new-card > button:focus,
 input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="checkbox"].statusValue:focus,
 button.add-book:focus {
   border: 2px solid var(--focusColor);
@@ -211,10 +214,31 @@ footer:focus {
   outline-offset: -2ch;
 }
 
+.req-msg {
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 2.3ch;
+  text-align: center;
+  margin-bottom: 3ch;
+}
+
 .form-line {
   display: flex;
   flex-wrap: wrap;
   gap: 2ch;
+}
+
+.err-msg {
+  display: flex;
+  justify-content: end;
+  margin-top: -1.4ch;
+}
+span[data-error]::before {
+  content: attr(data-error);
+  color: var(--invalidBorderColor);
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 1.8ch;
 }
 
 .btn-line {
@@ -234,7 +258,8 @@ label {
   font-size: 2.15ch;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   display: inline-block;
   flex: 1;
   height: 3ch;
