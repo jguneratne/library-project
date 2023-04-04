@@ -214,14 +214,6 @@ footer:focus {
   outline-offset: -2ch;
 }
 
-/* .req-msg {
-  font-family: "Nunito";
-  font-weight: 500;
-  font-size: 2.3ch;
-  text-align: center;
-  margin-bottom: 3ch;
-} */
-
 .form-line {
   display: flex;
   flex-wrap: wrap;
@@ -233,33 +225,6 @@ footer:focus {
   justify-content: end;
   margin-top: -1.4ch;
 }
-
-/* .title-err::before {
-  display: none;
-  content: "Please enter a title.";
-  color: var(--invalidBorderColor);
-  font-family: "Nunito";
-  font-weight: 500;
-  font-size: 1.8ch;
-}
-
-.author-err::before {
-  display: none;
-  content: "Please enter an author.";
-  color: var(--invalidBorderColor);
-  font-family: "Nunito";
-  font-weight: 500;
-  font-size: 1.8ch;
-}
-
-.pages-err::before {
-  display: none;
-  content: "Please enter a numberic value.";
-  color: var(--invalidBorderColor);
-  font-family: "Nunito";
-  font-weight: 500;
-  font-size: 1.8ch;
-} */
 
 .btn-line {
   display: flex;

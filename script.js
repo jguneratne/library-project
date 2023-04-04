@@ -143,38 +143,6 @@ Book.prototype.showForm = function () {
   form.style.display = "block";
 };
 
-// Book.prototype.validateForm = function () {
-//   const titleInput = document.querySelector("#title");
-//   const titleValidity = titleInput.validity;
-
-//   const authorInput = document.querySelector("#author");
-//   const authorValidity = authorInput.validity;
-
-//   const pagesInput = document.querySelector("#pages");
-//   const pagesValidity = pagesInput.validity;
-
-//   // const titleErr = document.querySelector(".title-err");
-//   // const titleErrDisplay = window.getComputedStyle(titleErr, "::before");
-
-//   // const authorErr = document.querySelector(".author-err");
-//   // const authorErrDisplay = window.getComputedStyle(authorErr, "::before");
-
-//   // const pagesErr = document.querySelector(".pages-err");
-//   // const pagesErrDisplay = window.getComputedStyle(pagesErr, "::before");
-
-//   if (titleValidity.valueMissing) {
-//     titleInput.setCustomValidity("Please enter the Title.");
-//   } else if (authorValidity.valueMissing) {
-//     authorInput.setCustomValidity("Please enter an Author.");
-//   } else if (pagesValidity.valueMissing || pagesValidity.typeMismatch) {
-//     pagesInput.setCustomValidity("Please enter a numeric value.");
-//   } else {
-//     titleInput.setCustomValidity("");
-//     authorInput.setCustomValidity("");
-//     pagesInput.setCustomValidity("");
-//   }
-// };
-
 Book.prototype.hideForm = function () {
   form.style.display = "none";
   document.forms[0].reset(); // Clears form for next entry
