@@ -103,6 +103,8 @@ Book.prototype.createCard = function () {
       })
     );
 
+    //Mouse events to remove books
+
     removeBtn.addEventListener(
       "pointerdown",
       (Book.prototype.removeArrayElement = function () {
@@ -128,6 +130,32 @@ Book.prototype.createCard = function () {
         Book.prototype.createCard();
       })
     );
+
+    //Keybarod events to remove books
+
+    removeBtn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        arrayPosition = newCard.dataset.cardNum;
+
+        console.log(arrayPosition);
+
+        removedElement = myLibrary.splice(arrayPosition, 1);
+        console.log(removedElement);
+      }
+    });
+
+    removeBtn.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        parent = document.querySelector(".bookshelf");
+        deleteCard = document.querySelector("[data-card-num]");
+
+        removedCard = parent.removeChild(deleteCard);
+        console.log(removedCard);
+
+        Book.prototype.replaceCards();
+        Book.prototype.createCard();
+      }
+    });
   }
 };
 
@@ -140,22 +168,29 @@ Book.prototype.replaceCards = function () {
 };
 
 Book.prototype.showForm = function () {
-  form.style.display = "block";
+  formDiv.style.display = "block";
 };
 
 Book.prototype.hideForm = function () {
-  form.style.display = "none";
+  formDiv.style.display = "none";
   document.forms[0].reset(); // Clears form for next entry
 };
 
 // Global Variables
 const bookFormBtn = document.querySelector(".show-form-btn");
-const form = document.querySelector(".form-div");
+const formDiv = document.querySelector(".form-div");
+const form = document.querySelector(".form");
 const addBook = document.querySelector(".add-book");
 const newCard = document.querySelector(".new-card");
 
 // Event Listeners
 bookFormBtn.addEventListener("pointerdown", Book.prototype.showForm);
 
-addBook.addEventListener("pointerdown", Book.prototype.getBookData);
-addBook.addEventListener("pointerdown", Book.prototype.hideForm);
+form.addEventListener("submit", Book.prototype.getBookData);
+form.addEventListener("submit", Book.prototype.hideForm);
+
+bookFormBtn.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    Book.prototype.showForm();
+  }
+});
