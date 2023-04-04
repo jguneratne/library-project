@@ -214,16 +214,48 @@ footer:focus {
   outline-offset: -2ch;
 }
 
+.req-msg {
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 2.3ch;
+  text-align: center;
+  margin-bottom: 3ch;
+}
+
 .form-line {
   display: flex;
   flex-wrap: wrap;
   gap: 2ch;
 }
 
-.err-msg {
+.instruct {
   display: flex;
   justify-content: end;
   margin-top: -1.4ch;
+}
+
+.title-msg::before {
+  content: "Please enter a title.";
+  color: var(--focusColor);
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 1.8ch;
+}
+
+.author-msg::before {
+  content: "Please enter an author.";
+  color: var(--focusColor);
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 1.8ch;
+}
+
+.pages-msg::before {
+  content: "Please enter a numeric value.";
+  color: var(--focusColor);
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 1.8ch;
 }
 
 .btn-line {
