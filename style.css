@@ -56,7 +56,6 @@
 
 .new-card > button:focus,
 input[type="text"]:focus,
-input[type="number"]:focus,
 input[type="checkbox"].statusValue:focus,
 button.add-book:focus {
   border: 2px solid var(--focusColor);
@@ -275,8 +274,7 @@ label {
   font-size: 2.15ch;
 }
 
-input[type="text"],
-input[type="number"] {
+input[type="text"] {
   display: inline-block;
   flex: 1;
   height: 3ch;
@@ -290,8 +288,7 @@ input[type="number"] {
   border: 0.2ch solid var(--bookshelfColor);
 }
 
-input[type="text"]:valid,
-input[type="number"]:valid {
+input[type="text"]:valid {
   background-color: var(--newCardColor);
 }
 
