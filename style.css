@@ -290,6 +290,11 @@ input[type="number"] {
   border: 0.2ch solid var(--bookshelfColor);
 }
 
+input[type="text"]:valid,
+input[type="number"]:valid {
+  background-color: var(--newCardColor);
+}
+
 input[type="checkbox"].statusValue {
   align-self: center;
   -webkit-appearance: none;
