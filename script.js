@@ -210,6 +210,6 @@ form.addEventListener("submit", bookEntry.hideForm);
 
 bookFormBtn.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
-    Book.prototype.showForm();
+    bookEntry.showForm();
   }
 });
