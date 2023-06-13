@@ -2,12 +2,20 @@ let myLibrary = [
   // Store book info from getBookData method
 ];
 
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
 }
+
+//
+//
+//
+//
+//  OLD CODE:
 
 Book.prototype.getBookData = function (e) {
   e.preventDefault(); // Stop form from submitting to server
