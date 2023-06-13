@@ -10,6 +10,15 @@ class Book {
     this.sread = read;
   }
 
+  showForm() {
+    formDiv.style.display = "block";
+  }
+
+  hideForm() {
+    formDiv.style.display = "none";
+    document.forms[0].reset(); // Clears form for next entry
+  }
+
   getBookData(e) {
     e.preventDefault();
 
@@ -28,21 +37,21 @@ const bookEntry = new Book(this.title, this.author, this.pages, this.read);
 //
 //  OLD CODE:
 
-Book.prototype.getBookData = function (e) {
-  e.preventDefault(); // Stop form from submitting to server
+// Book.prototype.getBookData = function (e) {
+//   e.preventDefault(); // Stop form from submitting to server
 
-  const bookEntry = new Book(
-    document.querySelector("#title").value,
-    document.querySelector("#author").value,
-    document.querySelector("#pages").value,
-    document.querySelector("#status").checked
-  );
+//   const bookEntry = new Book(
+//     document.querySelector("#title").value,
+//     document.querySelector("#author").value,
+//     document.querySelector("#pages").value,
+//     document.querySelector("#status").checked
+//   );
 
-  myLibrary.push(bookEntry);
+//   myLibrary.push(bookEntry);
 
-  Book.prototype.replaceCards();
-  Book.prototype.createCard();
-};
+//   Book.prototype.replaceCards();
+//   Book.prototype.createCard();
+// };
 
 Book.prototype.createCard = function () {
   for (let i = 0; i < myLibrary.length; i++) {
@@ -186,14 +195,14 @@ Book.prototype.replaceCards = function () {
   }
 };
 
-Book.prototype.showForm = function () {
-  formDiv.style.display = "block";
-};
+// Book.prototype.showForm = function () {
+//   formDiv.style.display = "block";
+// };
 
-Book.prototype.hideForm = function () {
-  formDiv.style.display = "none";
-  document.forms[0].reset(); // Clears form for next entry
-};
+// Book.prototype.hideForm = function () {
+//   formDiv.style.display = "none";
+//   document.forms[0].reset(); // Clears form for next entry
+// };
 
 // Global Variables
 const bookFormBtn = document.querySelector(".show-form-btn");
