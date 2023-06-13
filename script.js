@@ -3,13 +3,24 @@ let myLibrary = [
 ];
 
 class Book {
-  constructor(title, author, pages, status) {
+  constructor(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.status = status;
+    this.sread = read;
+  }
+
+  getBookData(e) {
+    e.preventDefault();
+
+    this.title = document.querySelector("#title").value;
+    this.author = document.querySelector("#author").value;
+    this.pages = document.querySelector("#pages").value;
+    this.read = document.querySelector("#status").checked;
   }
 }
+
+const bookEntry = new Book(this.title, this.author, this.pages, this.read);
 
 //
 //
