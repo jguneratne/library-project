@@ -205,7 +205,7 @@ const newCard = document.querySelector(".new-card");
 // Event Listeners
 bookFormBtn.addEventListener("pointerdown", bookEntry.showForm);
 
-form.addEventListener("submit", Book.prototype.getBookData);
+form.addEventListener("submit", bookEntry.getBookData);
 form.addEventListener("submit", bookEntry.hideForm);
 
 bookFormBtn.addEventListener("keydown", function (e) {
