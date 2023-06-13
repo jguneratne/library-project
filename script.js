@@ -195,15 +195,6 @@ Book.prototype.replaceCards = function () {
   }
 };
 
-// Book.prototype.showForm = function () {
-//   formDiv.style.display = "block";
-// };
-
-// Book.prototype.hideForm = function () {
-//   formDiv.style.display = "none";
-//   document.forms[0].reset(); // Clears form for next entry
-// };
-
 // Global Variables
 const bookFormBtn = document.querySelector(".show-form-btn");
 const formDiv = document.querySelector(".form-div");
@@ -212,10 +203,10 @@ const addBook = document.querySelector(".add-book");
 const newCard = document.querySelector(".new-card");
 
 // Event Listeners
-bookFormBtn.addEventListener("pointerdown", Book.prototype.showForm);
+bookFormBtn.addEventListener("pointerdown", bookEntry.showForm);
 
 form.addEventListener("submit", Book.prototype.getBookData);
-form.addEventListener("submit", Book.prototype.hideForm);
+form.addEventListener("submit", bookEntry.hideForm);
 
 bookFormBtn.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
