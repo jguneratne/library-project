@@ -65,7 +65,7 @@ class Book {
       statusValue.name = "cardInfo";
       statusValue.id = "show-status";
       statusValue.value = "read";
-      statusValue.checked = myLibrary[i].status;
+      statusValue.checked = myLibrary[i].read;
 
       const removeBtn = document.createElement("button");
       removeBtn.type = "button";
@@ -88,11 +88,11 @@ class Book {
       statusValue.addEventListener(
         "change",
         (Book.prototype.toggleReadStatus = function () {
-          if (myLibrary[i].status === true) {
-            myLibrary[i].status = false;
+          if (myLibrary[i].read === true) {
+            myLibrary[i].read = false;
           } else {
-            myLibrary[i].status === false;
-            myLibrary[i].status = true;
+            myLibrary[i].read === false;
+            myLibrary[i].read = true;
           }
         })
       );
