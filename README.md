@@ -8,4 +8,4 @@ Finish Date: April 4th, 2023
 
 Rework constructor functions into Javascript Classes:
 Start Date: June 13, 2023
-Finish Date:
+Finish Date: June 14, 2023
