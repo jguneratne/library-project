@@ -164,12 +164,14 @@ class Book {
   getBookData(e) {
     e.preventDefault();
 
-    myLibrary.push(
+    const bookEntry = new Book(
       document.querySelector("#title").value,
       document.querySelector("#author").value,
       document.querySelector("#pages").value,
       document.querySelector("#status").checked
     );
+
+    myLibrary.push(bookEntry);
   }
 }
 
