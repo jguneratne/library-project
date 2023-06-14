@@ -7,7 +7,7 @@ class Book {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.sread = read;
+    this.read = read;
   }
 
   showForm() {
@@ -22,10 +22,12 @@ class Book {
   getBookData(e) {
     e.preventDefault();
 
-    this.title = document.querySelector("#title").value;
-    this.author = document.querySelector("#author").value;
-    this.pages = document.querySelector("#pages").value;
-    this.read = document.querySelector("#status").checked;
+    myLibrary.push(
+      document.querySelector("#title").value,
+      document.querySelector("#author").value,
+      document.querySelector("#pages").value,
+      document.querySelector("#status").checked
+    );
   }
 }
 
