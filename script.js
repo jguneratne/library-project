@@ -164,18 +164,18 @@ class Book {
   getBookData(e) {
     e.preventDefault();
 
-    const bookEntry = new Book(
+    const libraryEntry = new Book(
       document.querySelector("#title").value,
       document.querySelector("#author").value,
       document.querySelector("#pages").value,
       document.querySelector("#status").checked
     );
 
-    myLibrary.push(bookEntry);
+    myLibrary.push(libraryEntry);
   }
 }
 
-const bookEntry = new Book(this.title, this.author, this.pages, this.read);
+const bookEntry = new Book();
 
 // Global Variables
 const bookFormBtn = document.querySelector(".show-form-btn");
