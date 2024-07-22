@@ -9,29 +9,47 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <header class="header">
         <h1 class="heading">my library</h1>
         <button type="submit" class="show-form-btn">
-          <img src="images/plus-box.svg" alt="Show Book Form Button" />
+          <img
+            src="images/plus-box.svg"
+            alt="Click to create a new library entry."
+          />
         </button>
-      </div>
+      </header>
 
-      <div class="main">
+      <main class="main">
         <div class="bookshelf">
-          <!--           
-            <div class="new-card">
-              <div class="card-info"></div>
-                <h4>Title:</h4>
-                <h4>Author:</h4>
-                <h4>Pages:</h4>
-                <h4>Finished:</h4>
-              <button type="submit" value="Remove" class="remove">
-                Remove Book
-              </button>
+          <!-- <div class="new-card">
+            <div class="card-info">
+              <h4>Title:</h4>
+              <p class="title-value">
+                Placeholder Title That's Really Long so I can make sure the row
+                spacing is correct.
+              </p>
+
+              <h4>Author:</h4>
+              <p class="title-value">Placeholder Author</p>
+
+              <h4>Pages:</h4>
+              <p class="pages-value">Placeholder Pages</p>
+
+              <label for="status">Finished:</label>
+              <input
+                type="checkbox"
+                id="status"
+                value="read"
+                name="cardInfo"
+                class="card-status"
+              />
             </div>
+            <button type="submit" value="Remove" class="remove">
+              Remove Book
+            </button>
           </div> -->
         </div>
-      </div>
+      </main>
 
       <div class="form-div">
         <form action="#" method="get" class="form">
@@ -46,9 +64,9 @@
               name="cardInfo"
               required
             />
-          </div>
-          <div class="instruct">
-            <p class="title-msg"></p>
+            <div class="instruct">
+              <p class="title-msg"></p>
+            </div>
           </div>
 
           <div class="form-line">
@@ -60,9 +78,9 @@
               name="cardInfo"
               required
             />
-          </div>
-          <div class="instruct">
-            <p class="author-msg"></p>
+            <div class="instruct">
+              <p class="author-msg"></p>
+            </div>
           </div>
 
           <div class="form-line">
@@ -77,12 +95,12 @@
               minlength="1"
               required
             />
-          </div>
-          <div class="instruct">
-            <p class="pages-msg"></p>
+            <div class="instruct">
+              <p class="pages-msg"></p>
+            </div>
           </div>
 
-          <div class="form-line">
+          <div class="form-line finished-line">
             <label for="status">Finished:</label>
             <input
               type="checkbox"
@@ -101,20 +119,24 @@
         </form>
       </div>
 
-      <footer>
-        <p class="my-copyright">Jenn Guneratne © 2023</p>
+      <footer class="footer-div">
+        <div class="copyright-div">
+          <p class="my-copyright">Jenn Guneratne © 2023</p>
+        </div>
 
-        <a
-          href="https://github.com/jguneratne/library-project"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            class="github-logo"
-            src="images/GitHub-Mark-32px.png"
-            alt="Octocat GitHub Logo"
-          />
-        </a>
+        <div class="logo-div">
+          <a
+            href="https://github.com/jguneratne/library-project"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              class="github-logo"
+              src="images/GitHub-Mark-32px.png"
+              alt="GitHub Logo: Click to visit GitHub repository for this site."
+            />
+          </a>
+        </div>
       </footer>
     </div>
 

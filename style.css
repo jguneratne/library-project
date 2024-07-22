@@ -48,8 +48,9 @@
 }
 
 .container {
+  max-width: 110em;
   display: grid;
-  grid-template-rows: 1fr 7.5fr 0.8fr;
+  grid-template-rows: min-content minmax(auto, 1fr) min-content;
 }
 
 /* Focus Styles */
@@ -99,21 +100,20 @@ footer:focus {
   grid-area: 1 / 1 / 2 / 2;
 
   display: grid;
-  grid-template-columns: 5fr 0.7fr;
-
+  grid-template-columns: 2fr 1fr;
   align-items: center;
 }
 
 .header h1 {
   height: min-content;
-  align-self: center;
-  margin-left: 4ch;
+  margin-left: 0.8em;
 }
 
 .header button.show-form-btn {
-  height: 8ch;
+  width: 8ch;
   border: none;
-  margin-right: 5ch;
+  justify-self: flex-end;
+  margin-right: 0.8em;
   background-color: var(--headFootColor);
   cursor: pointer;
 }
@@ -134,59 +134,14 @@ footer:focus {
 
 .bookshelf {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   grid-auto-rows: min-content;
-  gap: 2ch;
-  padding: 2ch;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 90%;
+  margin: 0 auto;
   background-color: var(--bookshelfColor);
 }
 
-.new-card {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--newCardColor);
-  border-radius: 1ch;
-  height: min-content;
-  padding: 4ch;
-}
-
-.new-card h4 {
-  font-family: "Nunito";
-  font-weight: 500;
-  font-size: 2.1ch;
-}
-
-.new-card p {
-  font-family: "Nunito";
-  font-weight: 300;
-}
-
-.card-info {
-  display: grid;
-  grid-template-columns: 10ch 1fr;
-  grid-template-rows: 3ch;
-  justify-items: start;
-  gap: 2ch;
-}
-
-.remove {
-  text-align: left;
-}
-
-.new-card > button {
-  align-self: center;
-  margin-top: 5ch;
-  background-color: var(--btnColor);
-  font-family: "Nunito";
-  font-weight: 400;
-  font-size: 1.8ch;
-  padding: 0.8ch;
-  border-radius: 3ch;
-  border: 1px solid var(--bookshelfColor);
-}
+/* Book Entry Form */
 
 .form-div {
   display: none;
@@ -196,41 +151,98 @@ footer:focus {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  gap: 1.5ch;
+  gap: 1em;
   height: min-content;
   min-width: min-content;
-  width: 35%;
+  width: 90%;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
-  padding: 5ch;
+  padding: 2em;
   background-color: var(--formColor);
-  border-radius: 3ch;
+  border-radius: 2em;
   outline: 1px solid black;
-  outline-offset: -2ch;
+  outline-offset: -1em;
 }
 
 .req-msg {
   font-family: "Nunito";
   font-weight: 500;
-  font-size: 2.3ch;
+  font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 3ch;
+  margin-bottom: 1em;
 }
 
 .form-line {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2ch;
+  flex-direction: column;
+}
+
+.form-line.finished-line {
+  flex-direction: row;
+}
+
+label {
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 1.1em;
+  padding-bottom: 0.3em;
+}
+
+input[type="text"] {
+  font-family: "Nunito";
+  font-weight: 400;
+  font-size: 1.1em;
+  padding-left: 0.5em;
+  background-color: var(--newCardColor);
+  border-radius: 0.5em;
+  border: 0.1em solid var(--bookshelfColor);
+}
+
+input[type="text"]:valid {
+  background-color: var(--newCardColor);
+}
+
+input[type="checkbox"].statusValue,
+input[type="checkbox"].card-status {
+  align-self: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin-left: 4em;
+  height: 2.5ch;
+  width: 2.5ch;
+  border: 1px solid var(--bookshelfColor);
+  border-radius: 1ch;
+  outline: none;
+  background-color: var(--newCardColor);
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"].statusValue:checked,
+input[type="checkbox"].card-status:checked {
+  border: 1px solid var(--bookshelfColor);
+  background-color: var(--newCardColor);
+}
+
+input[type="checkbox"].statusValue:checked::before,
+input[type="checkbox"].card-status:checked::before {
+  content: "\2713";
+  color: var(--focusColor);
+  position: absolute;
+  bottom: -0.4ch;
+  font-size: 4ch;
 }
 
 .instruct {
   display: flex;
   justify-content: end;
-  margin-top: -1.4ch;
+  margin-top: 0.3ch;
 }
 
 .title-msg::before {
@@ -257,77 +269,25 @@ footer:focus {
   font-size: 1.8ch;
 }
 
+.pages-msg {
+  margin-bottom: 1em;
+}
+
 .btn-line {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 3ch;
-  margin-top: 4ch;
-}
-
-label {
-  display: inline-block;
-  width: 8.5ch;
-  font-family: "Nunito";
-
-  font-weight: 500;
-  font-size: 2.15ch;
-}
-
-input[type="text"] {
-  display: inline-block;
-  flex: 1;
-  height: 3ch;
-  width: 10%;
-  padding-left: 1ch;
-  font-family: "Nunito";
-  font-weight: 400;
-  font-size: 1.9ch;
-  background-color: var(--newCardColor);
-  border-radius: 1ch;
-  border: 0.2ch solid var(--bookshelfColor);
-}
-
-input[type="text"]:valid {
-  background-color: var(--newCardColor);
-}
-
-input[type="checkbox"].statusValue {
-  align-self: center;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  height: 2.5ch;
-  width: 2.5ch;
-  border: 1px solid var(--bookshelfColor);
-  border-radius: 1ch;
-  outline: none;
-  background-color: var(--newCardColor);
-  cursor: pointer;
-  position: relative;
-}
-
-input[type="checkbox"].statusValue:checked {
-  border: 1px solid var(--bookshelfColor);
-  background-color: var(--newCardColor);
-}
-
-input[type="checkbox"].statusValue:checked::before {
-  content: "\2713";
-  color: var(--focusColor);
-  position: absolute;
-  bottom: -0.4ch;
-  font-size: 4ch;
+  margin-top: 1em;
 }
 
 button.add-book {
-  font-family: "Nunito";
+  font-family: "Happy Monkey";
   font-weight: 400;
-  font-size: 1.8ch;
+  font-size: 1.1em;
   background-color: var(--btnColor);
-  padding: 0.8ch;
-  border-radius: 3ch;
+  padding: 0.5em;
+  border-radius: 0.6em;
   border: 1px solid var(--bookshelfColor);
 }
 
@@ -336,28 +296,92 @@ button.add-book:hover {
   cursor: pointer;
 }
 
-/* Footer */
+/* Library Entry */
 
-footer {
-  background-color: var(--headFootColor);
-  grid-area: 3 / 1 / 4 / 2;
+.new-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--newCardColor);
+  border-radius: 1ch;
+  height: min-content;
+  padding: 1em;
+  margin: 1em;
+}
 
+.new-card h4 {
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 2.1ch;
+}
+
+.new-card p {
+  font-family: "Nunito";
+  font-weight: 300;
+}
+
+.card-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-content: center;
-  align-items: center;
+  grid-template-columns: 10ch 1fr;
+  grid-template-rows: min-content;
+  justify-items: start;
+  gap: 2ch;
+}
 
+input[type="checkbox"].card-status {
+  margin-left: 0;
+}
+
+.remove {
+  text-align: left;
+}
+
+.new-card > button {
+  align-self: center;
+  margin-top: 2em;
+  background-color: var(--btnColor);
   font-family: "Nunito";
   font-weight: 400;
+  font-size: 1rem;
+  padding: 0.4em;
+  border-radius: 0.6em;
+  border: 1px solid var(--bookshelfColor);
 }
 
-footer p {
-  height: min-content;
-  justify-self: end;
-  margin-right: 1ch;
+.new-card > button:hover {
+  background-color: var(--mainColor);
+  cursor: pointer;
 }
 
-footer img {
-  height: 3.5ch;
-  margin-left: 1ch;
+/* Footer */
+
+.footer-div {
+  background-color: var(--head-foot-col);
+  padding: 0.6em;
+
+  display: flex;
+  justify-content: center;
 }
+
+.copyright-div {
+  display: grid;
+  align-content: center;
+}
+
+.footer-div p {
+  color: var(--dark-font-col);
+}
+
+.footer-div .logo-div a {
+  margin-left: 1em;
+}
+
+.footer-div .logo-div a img {
+  height: 3ch;
+  outline: 1.5px solid transparent;
+  border: 1px solid transparent;
+}
+
+/* .footer-div .logo-div a img:focus-visible {
+  outline: 1.5px solid var(--dark-font-col);
+  border: 1px solid transparent;
+} */

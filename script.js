@@ -55,17 +55,17 @@ class Book {
       pagesValue.className = "pages-value";
       pagesValue.textContent = `${myLibrary[i].pages}`;
 
-      const status = document.createElement("h4");
-      status.className = "status";
-      status.textContent = "Finished:";
+      const statusLabel = document.createElement("LABEL");
+      statusLabel.setAttribute("for", "status");
+      statusLabel.textContent = "Finished:";
 
-      const statusValue = document.createElement("INPUT");
-      statusValue.setAttribute("type", "checkbox");
-      statusValue.className = "statusValue";
-      statusValue.name = "cardInfo";
-      statusValue.id = "show-status";
-      statusValue.value = "read";
-      statusValue.checked = myLibrary[i].read;
+      const checkboxInput = document.createElement("INPUT");
+      checkboxInput.setAttribute("type", "checkbox");
+      checkboxInput.className = "card-status";
+      checkboxInput.name = "cardInfo";
+      checkboxInput.id = "show-status";
+      checkboxInput.value = "read";
+      checkboxInput.checked = myLibrary[i].read;
 
       const removeBtn = document.createElement("button");
       removeBtn.type = "button";
@@ -81,11 +81,11 @@ class Book {
       cardInfo.appendChild(authorValue);
       cardInfo.appendChild(pages);
       cardInfo.appendChild(pagesValue);
-      cardInfo.appendChild(status);
-      cardInfo.appendChild(statusValue);
+      cardInfo.appendChild(statusLabel);
+      cardInfo.appendChild(checkboxInput);
       newCard.appendChild(removeBtn);
 
-      statusValue.addEventListener(
+      checkboxInput.addEventListener(
         "change",
         (Book.prototype.toggleReadStatus = function () {
           if (myLibrary[i].read === true) {
