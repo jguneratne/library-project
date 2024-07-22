@@ -113,7 +113,7 @@ footer:focus {
   width: 8ch;
   border: none;
   justify-self: flex-end;
-  margin-right: 0.8em;
+  margin-right: 1.3em;
   background-color: var(--headFootColor);
   cursor: pointer;
 }
