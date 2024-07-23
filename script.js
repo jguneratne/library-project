@@ -181,11 +181,14 @@ const bookEntry = new Book();
 const bookFormBtn = document.querySelector(".show-form-btn");
 const formDiv = document.querySelector(".form-div");
 const form = document.querySelector(".form");
+const cancelEntry = document.querySelector(".cancel-entry");
 const addBook = document.querySelector(".add-book");
 const newCard = document.querySelector(".new-card");
 
 // Event Listeners
 bookFormBtn.addEventListener("pointerdown", bookEntry.showForm);
+
+cancelEntry.addEventListener("pointerdown", bookEntry.hideForm);
 
 form.addEventListener("submit", bookEntry.getBookData);
 form.addEventListener("submit", bookEntry.hideForm);
