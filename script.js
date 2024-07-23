@@ -21,7 +21,7 @@ class Book {
 
   createCard() {
     for (let i = 0; i < myLibrary.length; i++) {
-      const libEntry = document.querySelector(".bookshelf");
+      const libEntry = document.querySelector(".card-div");
 
       const newCard = document.createElement("div");
       newCard.className = "new-card";
@@ -155,7 +155,7 @@ class Book {
 
   replaceCards() {
     // Replaces all cards on each new card creation to prevent duplicates
-    let parent = document.querySelector(".bookshelf");
+    let parent = document.querySelector(".card-div");
     while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
     }
