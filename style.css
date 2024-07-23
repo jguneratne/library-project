@@ -170,17 +170,29 @@ footer:focus {
   outline-offset: -1em;
 }
 
+fieldset {
+  outline: none;
+  border: none;
+}
+
+legend {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 0.3em;
+}
+
 .req-msg {
   font-family: "Nunito";
   font-weight: 500;
   font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 .form-line {
   display: flex;
   flex-direction: column;
+  margin-bottom: 0.3em;
 }
 
 .form-line.finished-line {
@@ -215,7 +227,7 @@ input[type="checkbox"].card-status {
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  margin-left: 4em;
+  margin-left: 2em;
   height: 2.5ch;
   width: 2.5ch;
   border: 1px solid var(--bookshelfColor);
@@ -244,7 +256,7 @@ input[type="checkbox"].card-status:checked::before {
 .instruct {
   display: flex;
   justify-content: end;
-  margin-top: -0.7em;
+  margin-bottom: 1em;
 }
 
 .title-msg,
@@ -257,7 +269,7 @@ input[type="checkbox"].card-status:checked::before {
 }
 
 .pages-msg {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .msg-error {
@@ -268,20 +280,23 @@ input[type="checkbox"].card-status:checked::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3ch;
-  margin-top: 1em;
+  gap: 1em;
+  margin-top: 3em;
 }
 
+button.cancel-entry,
 button.add-book {
   font-family: "Happy Monkey";
   font-weight: 400;
   font-size: 1.1em;
   background-color: var(--btnColor);
+  width: 6em;
   padding: 0.5em;
   border-radius: 0.6em;
   border: 1px solid var(--bookshelfColor);
 }
 
+button.cancel-entry:hover,
 button.add-book:hover {
   background-color: var(--mainColor);
   cursor: pointer;
@@ -400,7 +415,11 @@ input[type="checkbox"].card-status {
   }
 
   input[type="checkbox"].statusValue {
-    margin-left: 10em;
+    margin-left: 9.5em;
+  }
+
+  .btn-line {
+    gap: 3ch;
   }
 }
 

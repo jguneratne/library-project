@@ -25,71 +25,83 @@
         <div class="bookshelf">
           <div class="form-div">
             <form action="#" method="get" class="form">
-              <div class="req-msg">
-                <p>Required fields are marked with *</p>
-              </div>
+              <fieldset>
+                <legend>Create Book Entry</legend>
+                <h1 class="req-msg">
+                  <p>Required fields are marked with *</p>
+                </h1>
 
-              <div class="form-line">
-                <label for="title">* Title:</label>
-                <input
-                  type="text"
-                  id="title"
-                  class="title"
-                  name="cardInfo"
-                  required
-                />
-              </div>
-              <div class="instruct">
-                <p class="title-msg">Please enter a title.</p>
-              </div>
+                <div class="form-line">
+                  <label for="title">* Title:</label>
+                  <input
+                    type="text"
+                    id="title"
+                    class="title"
+                    name="cardInfo"
+                    required
+                  />
+                </div>
+                <div class="instruct">
+                  <p class="title-msg">Please enter a title.</p>
+                </div>
 
-              <div class="form-line">
-                <label for="author">* Author:</label>
-                <input
-                  type="text"
-                  id="author"
-                  class="author"
-                  name="cardInfo"
-                  required
-                />
-              </div>
-              <div class="instruct">
-                <p class="author-msg">Please enter an author.</p>
-              </div>
+                <div class="form-line">
+                  <label for="author">* Author:</label>
+                  <input
+                    type="text"
+                    id="author"
+                    class="author"
+                    name="cardInfo"
+                    required
+                  />
+                </div>
+                <div class="instruct">
+                  <p class="author-msg">Please enter an author.</p>
+                </div>
 
-              <div class="form-line">
-                <label for="pages">* Pages:</label>
-                <input
-                  type="text"
-                  id="pages"
-                  class="pages"
-                  name="cardInfo"
-                  pattern="^[0-9]*$"
-                  title="Numeric value required."
-                  minlength="1"
-                  required
-                />
-              </div>
-              <div class="instruct">
-                <p class="pages-msg">Please enter a numeric value</p>
-              </div>
+                <div class="form-line">
+                  <label for="pages">* Pages:</label>
+                  <input
+                    type="text"
+                    id="pages"
+                    class="pages"
+                    name="cardInfo"
+                    pattern="^[0-9]*$"
+                    title="Numeric value required."
+                    minlength="1"
+                    required
+                  />
+                </div>
+                <div class="instruct">
+                  <p class="pages-msg">Please enter a number.</p>
+                </div>
 
-              <div class="form-line finished-line">
-                <label for="status">Finished:</label>
-                <input
-                  type="checkbox"
-                  id="status"
-                  value="read"
-                  name="cardInfo"
-                  class="statusValue"
-                />
-              </div>
+                <div class="form-line finished-line">
+                  <label for="status">Finished:</label>
+                  <input
+                    type="checkbox"
+                    id="status"
+                    value="read"
+                    name="cardInfo"
+                    class="statusValue"
+                  />
+                </div>
 
-              <div class="btn-line">
-                <button type="submit" id="add" value="add" class="add-book">
-                  Add Book
-                </button>
-              </div>
+                <div class="btn-line">
+                  <button
+                    type="button"
+                    id="cancel"
+                    value="cancel"
+                    class="cancel-entry"
+                  >
+                    Cancel
+                  </button>
+
+                  <button type="submit" id="add" value="add" class="add-book">
+                    Add Book
+                  </button>
+                </div>
+              </fieldset>
             </form>
           </div>
           <div class="card-div">
