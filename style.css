@@ -43,6 +43,7 @@
   --formColor: #d0e8cf;
   --btnColor: #e5e4e4;
   --focusColor: #0e1f1d;
+  --error-color: #931b05;
   --invalidBGColor: rgb(247, 189, 189);
   --invalidBorderColor: rgb(249, 80, 80);
 }
@@ -161,12 +162,6 @@ footer:focus {
   gap: 1em;
   min-height: min-content;
   min-width: min-content;
-  /* width: 90%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0; */
   margin: 1em auto;
   padding: 2em;
   background-color: var(--formColor);
@@ -252,24 +247,9 @@ input[type="checkbox"].card-status:checked::before {
   margin-top: -0.7em;
 }
 
-.title-msg::before {
-  content: "Please enter a title.";
-  color: var(--focusColor);
-  font-family: "Nunito";
-  font-weight: 500;
-  font-size: 1.8ch;
-}
-
-.author-msg::before {
-  content: "Please enter an author.";
-  color: var(--focusColor);
-  font-family: "Nunito";
-  font-weight: 500;
-  font-size: 1.8ch;
-}
-
-.pages-msg::before {
-  content: "Please enter a numeric value.";
+.title-msg,
+.author-msg,
+.pages-msg {
   color: var(--focusColor);
   font-family: "Nunito";
   font-weight: 500;
@@ -278,6 +258,10 @@ input[type="checkbox"].card-status:checked::before {
 
 .pages-msg {
   margin-bottom: 1em;
+}
+
+.msg-error {
+  color: var(--error-color);
 }
 
 .btn-line {
