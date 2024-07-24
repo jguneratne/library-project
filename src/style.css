@@ -2,32 +2,36 @@
   font-family: "Yeseva One";
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/yeseva-one-v20-latin-regular.woff2") format("woff2"),
-    url("fonts/yeseva-one-v20-latin-regular.woff") format("woff");
+  src:
+    url("./assets/fonts/yeseva-one-v20-latin-regular.woff2") format("woff2"),
+    url("./assets/fonts/yeseva-one-v20-latin-regular.woff") format("woff");
 }
 
 @font-face {
   font-family: "Nunito";
   font-style: light;
   font-weight: 300;
-  src: url("fonts/nunito-v25-latin-300.woff2") format("woff2"),
-    url("fonts/nunito-v25-latin-300.woff") format("woff");
+  src:
+    url("./assets/fonts/nunito-v25-latin-300.woff2") format("woff2"),
+    url("./assets/fonts/nunito-v25-latin-300.woff") format("woff");
 }
 
 @font-face {
   font-family: "Nunito";
   font-style: normal;
   font-weight: 400;
-  src: url("fonts/nunito-v25-latin-regular.woff2") format("woff2"),
-    url("fonts/nunito-v25-latin-regular.woff") format("woff");
+  src:
+    url("./assets/fonts/nunito-v25-latin-regular.woff2") format("woff2"),
+    url("./assets/fonts/nunito-v25-latin-regular.woff") format("woff");
 }
 
 @font-face {
   font-family: "Nunito";
   font-style: bold;
   font-weight: 500;
-  src: url("fonts/nunito-v25-latin-500.woff2") format("woff2"),
-    url("fonts/nunito-v25-latin-500.woff") format("woff");
+  src:
+    url("./assets/fonts/nunito-v25-latin-500.woff2") format("woff2"),
+    url("./assets/fonts/nunito-v25-latin-500.woff") format("woff");
 }
 
 * {

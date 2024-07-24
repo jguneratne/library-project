@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library Project</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Removed initial-scale and max-width from content attribute to fix zooming problems on mobile -->
+    <title><%= title %></title>
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./js/script.js" defer="defer"></script>
   </head>
   <body>
     <div class="container">
@@ -14,7 +16,7 @@
           <h1 class="heading">my library</h1>
           <button type="submit" class="show-form-btn">
             <img
-              src="images/plus-box.svg"
+              src="./assets/images/plus-box.svg"
               alt="Click to create a new library entry."
             />
           </button>
@@ -149,14 +151,12 @@
           >
             <img
               class="github-logo"
-              src="images/GitHub-Mark-32px.png"
+              src="./assets/images/GitHub-Mark-32px.png"
               alt="GitHub Logo: Click to visit GitHub repository for this site."
             />
           </a>
         </div>
       </footer>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>

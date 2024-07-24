@@ -13,6 +13,7 @@ module.exports = {
       "@scripts": path.join(__dirname, "src/js"),
       "@styles": path.join(__dirname, "src/css"),
       "@images": path.join(__dirname, "src/images"),
+      "@fonts": path.join(__dirname, "src/fonts"),
     },
   },
 
@@ -22,13 +23,12 @@ module.exports = {
     new HtmlBundlerPlugin({
       entry: [
         {
-          import: "./src/views/template.ejs", // template file
+          import: "./src/index.html", // template file
           filename: "index.html", // => dist/index.html
           data: {
             title: "Bosco Images Wildlife Photography: Homepage",
           }, // pass variables into template
         },
-        
       ],
       js: {
         // output filename for JS
@@ -38,20 +38,7 @@ module.exports = {
         // output filename for CSS
         filename: "css/[name].[contenthash:8].css",
       },
-
-      preprocessor: "ejs",
-      preprocessorOptions: {
-        async: false, // defaults 'false'
-        // defaults process.cwd(), root path for includes with an absolute path (e.g., /file.html)
-        root: path.join(__dirname, "src/views"), // defaults process.cwd()
-        // defaults [], an array of paths to use when resolving includes with relative paths
-        views: [
-          "src/partials", // relative path
-          path.join(__dirname, "src/partials"), // absolute path
-        ],
-      },
     }),
-
   ],
 
   module: {
@@ -73,19 +60,12 @@ module.exports = {
         generator: {
           filename: ({ filename }) => {
             // Keep directory structure for images in dist folder
-            const srcPath =
-              "src/assets/imgs" ||
-              "src/assets/imgs/about-page" ||
-              "src/assets/imgs/birds-gal" ||
-              "src/assets/imgs/home-imgs" ||
-              "src/assets/imgs/insects-gal" ||
-              "src/assets/imgs/small-animals-gal" ||
-              "src/assets/imgs/thumbnails";
+            const srcPath = "src/assets/imgs";
             const regExp = new RegExp(
-              `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`
+              `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`,
             );
             const assetPath = path.dirname(
-              regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/")
+              regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/"),
             );
 
             return `images/${assetPath}/[name].[hash:8][ext]`;
