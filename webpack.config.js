@@ -10,10 +10,10 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@scripts": path.join(__dirname, "src/js"),
+      "@scripts": path.join(__dirname, "src/js/"),
       "@styles": path.join(__dirname, "src/css"),
-      "@images": path.join(__dirname, "src/images"),
-      "@fonts": path.join(__dirname, "src/fonts"),
+      "@images": path.join(__dirname, "src/assets/images"),
+      "@fonts": path.join(__dirname, "src/assets/fonts"),
     },
   },
 
@@ -26,7 +26,7 @@ module.exports = {
           import: "./src/index.html", // template file
           filename: "index.html", // => dist/index.html
           data: {
-            title: "Bosco Images Wildlife Photography: Homepage",
+            title: "My Library",
           }, // pass variables into template
         },
       ],
@@ -60,7 +60,7 @@ module.exports = {
         generator: {
           filename: ({ filename }) => {
             // Keep directory structure for images in dist folder
-            const srcPath = "src/assets/imgs";
+            const srcPath = "src/assets/images";
             const regExp = new RegExp(
               `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`
             );
