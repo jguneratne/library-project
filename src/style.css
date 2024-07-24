@@ -113,20 +113,21 @@ footer:focus {
 
 .header-div {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: auto 90% auto;
   align-items: center;
 }
 
 .header h1 {
-  height: min-content;
-  margin-left: 0.8em;
+  grid-area: 1 / 2 / 2 / 3;
+  justify-self: flex-start;
 }
 
 .header button.show-form-btn {
+  grid-area: 1 / 2 / 2 / 3;
   width: 8ch;
   border: none;
   justify-self: flex-end;
-  margin-right: 1.3em;
+  margin-right: -0.2em;
   background-color: var(--headFootColor);
   cursor: pointer;
 }
