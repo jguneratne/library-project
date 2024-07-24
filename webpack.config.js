@@ -62,10 +62,10 @@ module.exports = {
             // Keep directory structure for images in dist folder
             const srcPath = "src/assets/imgs";
             const regExp = new RegExp(
-              `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`,
+              `[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`
             );
             const assetPath = path.dirname(
-              regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/"),
+              regExp.exec(filename)[1].replace("@", "").replace(/\\/g, "/")
             );
 
             return `images/${assetPath}/[name].[hash:8][ext]`;
