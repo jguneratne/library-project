@@ -4,7 +4,6 @@ export const bookFormBtn = document.querySelector(".show-form-btn");
 export const formDiv = document.querySelector(".form-div");
 export const form = document.querySelector(".form");
 export const cancelEntry = document.querySelector(".cancel-entry");
-export const addBook = document.querySelector(".add-book");
 
 export const bookEntry = new Book();
 
