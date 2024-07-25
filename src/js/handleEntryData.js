@@ -160,9 +160,7 @@ export class Book {
     }
   }
 
-  getBookData(e) {
-    e.preventDefault();
-
+  getBookData() {
     const libraryEntry = new Book(
       document.querySelector("#title").value,
       document.querySelector("#author").value,

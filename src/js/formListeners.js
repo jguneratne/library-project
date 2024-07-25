@@ -24,9 +24,12 @@ export function cancelForm() {
   });
 }
 
-// Event Listeners
-
-form.addEventListener("submit", bookEntry.getBookData);
-form.addEventListener("submit", bookEntry.hideForm);
-form.addEventListener("submit", bookEntry.replaceCards);
-form.addEventListener("submit", bookEntry.createCard);
+export function getEntry() {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    bookEntry.getBookData();
+    bookEntry.hideForm();
+    bookEntry.replaceCards();
+    bookEntry.createCard();
+  });
+}

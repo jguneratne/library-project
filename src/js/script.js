@@ -1,6 +1,7 @@
-import { formBtn, cancelForm } from "./eventListeners";
+import { formBtn, cancelForm, getEntry } from "./formListeners";
 
 document.addEventListener("DOMContentLoaded", () => {
   formBtn();
   cancelForm();
+  getEntry();
 });
