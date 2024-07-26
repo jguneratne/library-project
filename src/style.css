@@ -225,6 +225,11 @@ input[type="text"]:valid {
   background-color: var(--newCardColor);
 }
 
+input[type="text"].invalid {
+  background-color: var(--invalidBGColor);
+  border: 0.1em solid (var(--invalidBorderColor));
+}
+
 input[type="checkbox"].statusValue,
 input[type="checkbox"].card-status {
   align-self: center;
@@ -277,8 +282,20 @@ input[type="checkbox"].card-status:checked::before {
   margin-bottom: 2em;
 }
 
-.msg-error {
+.msg-error,
+.submit-msg {
   color: var(--error-color);
+  font-weight: bold;
+}
+
+.submit-instruct {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-msg {
+  margin-top: 1.5em;
+  visibility: hidden;
 }
 
 .btn-line {

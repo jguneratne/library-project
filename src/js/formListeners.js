@@ -1,4 +1,4 @@
-import { bookEntry, bookFormBtn, form, cancelEntry } from "./variables";
+import { bookEntry, bookFormBtn, cancelEntry } from "./variables";
 
 export function formBtn() {
   bookFormBtn.addEventListener("pointerdown", (e) => {
@@ -25,11 +25,8 @@ export function cancelForm() {
 }
 
 export function getEntry() {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    bookEntry.getBookData();
-    bookEntry.hideForm();
-    bookEntry.replaceCards();
-    bookEntry.createCard();
-  });
+  bookEntry.getBookData();
+  bookEntry.hideForm();
+  bookEntry.replaceCards();
+  bookEntry.createCard();
 }

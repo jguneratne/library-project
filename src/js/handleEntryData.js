@@ -1,4 +1,11 @@
-import { myLibrary, formDiv } from "./variables";
+import {
+  myLibrary,
+  formDiv,
+  bookTitle,
+  bookAuthor,
+  bookPages,
+  readValue,
+} from "./variables";
 
 export class Book {
   constructor(title, author, pages, read) {
@@ -162,10 +169,10 @@ export class Book {
 
   getBookData() {
     const libraryEntry = new Book(
-      document.querySelector("#title").value,
-      document.querySelector("#author").value,
-      document.querySelector("#pages").value,
-      document.querySelector("#status").checked,
+      bookTitle.value,
+      bookAuthor.value,
+      bookPages.value,
+      readValue.checked,
     );
 
     myLibrary.entryData.push(libraryEntry);
