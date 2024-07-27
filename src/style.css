@@ -40,7 +40,7 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 
-  --fallbackColor: #eedfd7;
+  --bodyColor: #042630;
   --newCardColor: #fff9e3;
   --headFootColor: #f3f0e7;
   --mainColor: #c8baab;
@@ -55,12 +55,12 @@
 
 body {
   height: 100vh;
-  background-color: var(--fallbackColor);
+  background-color: var(--bodyColor);
 }
 
 .container {
   height: 100%;
-  max-width: 90em;
+  max-width: 110em;
   border-left: 0.1em solid;
   border-right: 0.1em solid;
   margin: 0 auto;
