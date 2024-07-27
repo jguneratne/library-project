@@ -309,9 +309,9 @@ input[type="checkbox"].statusValue:checked::before {
 
 button.cancel-entry,
 button.add-book {
-  font-family: "Happy Monkey";
+  font-family: "Nunito";
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: 1rem;
   background-color: var(--btnColor);
   width: 6em;
   padding: 0.5em;
