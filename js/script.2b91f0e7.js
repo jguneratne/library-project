@@ -182,24 +182,24 @@ class Book {
       const cardInfo = document.createElement("div");
       cardInfo.className = "card-info";
 
-      const title = document.createElement("h4");
-      title.className = "title";
+      const title = document.createElement("p");
+      title.className = "card-heading";
       title.textContent = "Title:";
 
       const titleValue = document.createElement("p");
       titleValue.className = "title-value";
       titleValue.textContent = `${_variables__WEBPACK_IMPORTED_MODULE_0__.myLibrary.libraryData[i].title}`;
 
-      const author = document.createElement("h4");
-      author.className = "author";
+      const author = document.createElement("p");
+      author.className = "card-heading";
       author.textContent = "Author:";
 
       const authorValue = document.createElement("p");
       authorValue.className = "author-value";
       authorValue.textContent = `${_variables__WEBPACK_IMPORTED_MODULE_0__.myLibrary.libraryData[i].author}`;
 
-      const pages = document.createElement("h4");
-      pages.className = "pages";
+      const pages = document.createElement("p");
+      pages.className = "card-heading";
       pages.textContent = "Pages:";
 
       const pagesValue = document.createElement("p");
@@ -208,6 +208,7 @@ class Book {
 
       const statusLabel = document.createElement("LABEL");
       statusLabel.setAttribute("for", "status");
+      statusLabel.className = "card-heading";
       statusLabel.textContent = "Finished:";
 
       const checkboxInput = document.createElement("INPUT");
@@ -462,4 +463,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /******/ })()
 ;
-//# sourceMappingURL=script.39fe3cf5.js.map
+//# sourceMappingURL=script.2b91f0e7.js.map
