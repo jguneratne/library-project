@@ -1,5 +1,6 @@
 import { getEntry } from "./formListeners";
 import {
+  bookFormBtn,
   form,
   bookTitle,
   titleMsg,
@@ -61,6 +62,7 @@ export function validateOnSubmit() {
       submitError.style.visibility = "hidden";
       submitError.removeAttribute("aria-live", "polite");
       getEntry();
+      bookFormBtn.focus();
     }
   });
 }
