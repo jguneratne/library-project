@@ -193,7 +193,7 @@ legend {
 label {
   font-family: "Nunito";
   font-weight: 500;
-  font-size: 1.1em;
+  font-size: 1.2rem;
   padding-bottom: 0.3em;
 }
 
@@ -211,45 +211,57 @@ input[type="text"].invalid {
   background-color: var(--invalidBGColor);
 }
 
-input[type="checkbox"].statusValue,
-input[type="checkbox"].card-status {
+input[type="checkbox"].card-status,
+input[type="checkbox"].statusValue {
   align-self: center;
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
   margin-left: 2em;
-  height: 2.5ch;
-  width: 2.5ch;
+  height: 1.1em;
+  width: 1.1em;
+  border-radius: 0.4em;
   border: 1px solid var(--bookshelfColor);
-  border-radius: 1ch;
   outline: none;
-  background-color: var(--newCardColor);
+  background-color: var(--headFootColor);
   cursor: pointer;
   position: relative;
+}
+
+input[type="checkbox"].statusValue {
+  height: 1.8em;
+  width: 1.8em;
+  border-radius: 0.6em;
+  background-color: var(--newCardColor);
 }
 
 input[type="checkbox"].card-status {
   background-color: var(--headFootColor);
 }
 
-input[type="checkbox"].statusValue:checked,
 input[type="checkbox"].card-status:checked {
+  background-color: var(--headFootColor);
   border: 1px solid var(--bookshelfColor);
+}
+
+input[type="checkbox"].statusValue:checked {
   background-color: var(--newCardColor);
 }
 
-input[type="checkbox"].card-status:checked {
-  background-color: var(--headFootColor);
-}
-
-input[type="checkbox"].statusValue:checked::before,
-input[type="checkbox"].card-status:checked::before {
+input[type="checkbox"].card-status:checked::before,
+input[type="checkbox"].statusValue:checked::before {
   content: "\2713";
   color: var(--focusColor);
   position: absolute;
+  bottom: -0.25em;
+  left: -0.05em;
+  font-size: 1.8rem;
+}
+
+input[type="checkbox"].statusValue:checked::before {
   bottom: -0.4ch;
-  font-size: 4ch;
+  font-size: 2.5rem;
 }
 
 .instruct {
@@ -336,10 +348,10 @@ button.add-book:hover {
   width: 16em;
 }
 
-.new-card h4 {
+.new-card .card-heading {
   font-family: "Nunito";
   font-weight: 500;
-  font-size: 2.1ch;
+  font-size: 1.2rem;
 }
 
 .new-card p {
