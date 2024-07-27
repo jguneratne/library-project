@@ -68,7 +68,7 @@ body {
   grid-template-rows: min-content minmax(auto, 1fr) min-content;
 }
 
-/* Focus Styles */
+/* Shared Focus Styles */
 
 .new-card > button:focus,
 input[type="text"]:focus,
@@ -77,36 +77,6 @@ button.add-book:focus,
 button.cancel-entry:focus {
   border: 2px solid var(--focusColor);
   outline: 2px var(--focusColor);
-}
-
-button.show-form-btn:focus img {
-  border: 2px solid var(--focusColor);
-  outline: 2px var(--focusColor);
-  border-radius: 1ch;
-  outline-offset: none;
-}
-
-a:focus img {
-  border: 1px solid var(--focusColor);
-  border-radius: 1ch;
-  outline: 2px var(--focusColor);
-  height: 3.8ch;
-  width: 3.8ch;
-  outline-offset: none;
-}
-
-a:focus {
-  border: none;
-  outline: none;
-}
-
-button.show-form-btn:focus {
-  border: 5px solid white;
-  outline: 5px white;
-}
-
-footer:focus {
-  border: none;
 }
 
 /* Header */
@@ -127,21 +97,29 @@ footer:focus {
   justify-self: flex-start;
 }
 
+.heading {
+  font-family: "Yeseva One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60;
+}
+
 .header button.show-form-btn {
   grid-area: 1 / 2 / 2 / 3;
   width: 8ch;
-  border: none;
+  border-radius: 1ch;
+  border: 0.2em solid transparent;
+  outline: 0.2em solid transparent;
   justify-self: flex-end;
   margin-right: -0.2em;
   background-color: var(--headFootColor);
   cursor: pointer;
 }
 
-.heading {
-  font-family: "Yeseva One";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 60;
+.header button.show-form-btn:focus img {
+  border: 0.2em solid var(--focusColor);
+  outline: 0.2em var(--focusColor);
+  border-radius: 1ch;
 }
 
 /* Main/Bookshelf */
@@ -380,6 +358,8 @@ input[type="checkbox"].card-status {
 
 .remove {
   text-align: left;
+  border: 2px solid transparent;
+  outline: 2px solid transparent;
 }
 
 .new-card > button {
@@ -405,35 +385,31 @@ input[type="checkbox"].card-status {
 .footer-div {
   grid-area: 3 / 1 / 4 / 2;
   background-color: var(--headFootColor);
-  padding: 0.6em;
+  padding: 1ch;
 
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.copyright-div {
-  display: grid;
-  align-content: center;
+.footer-div .copyright-div {
+  margin-right: 1em;
 }
 
-.footer-div p {
-  color: var(--dark-font-col);
-}
-
-.footer-div .logo-div a {
-  margin-left: 1em;
-}
-
+.footer-div .logo-div a,
 .footer-div .logo-div a img {
-  height: 3ch;
-  outline: 1.5px solid transparent;
-  border: 1px solid transparent;
+  min-width: 3ch;
+  min-height: 3ch;
+  outline: 0.1em solid transparent;
+  border: 0.1em solid transparent;
 }
 
-/* .footer-div .logo-div a img:focus-visible {
-  outline: 1.5px solid var(--dark-font-col);
-  border: 1px solid transparent;
-} */
+.footer-div .logo-div a:focus-visible img {
+  outline: 0.1em solid var(--focusColor);
+  outline-offset: 0.2em;
+  border-radius: 0.5em;
+  border: 0.1em solid transparent;
+}
 
 /* Media Queries */
 
