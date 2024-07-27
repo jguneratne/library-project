@@ -10,5 +10,5 @@ Rework constructor functions into Javascript Classes:
 Start Date: June 13, 2023
 Finish Date: June 14, 2023
 
-Rework layout, styling and add JS form validation:
+Install Webpack, Responsive layout/styling, and add JS form validation:
 Start Date: July 23, 2024
