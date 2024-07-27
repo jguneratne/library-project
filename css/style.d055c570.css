@@ -143,7 +143,7 @@ input[type="checkbox"].card-status:checked:focus {
 /* Book Entry Form */
 
 .form-div {
-  display: none;
+  /* display: none; */
 }
 
 .form {
@@ -459,4 +459,4 @@ button.remove:hover {
   }
 }
 
-/*# sourceMappingURL=style.669fbb6e.css.map*/
+/*# sourceMappingURL=style.d055c570.css.map*/
