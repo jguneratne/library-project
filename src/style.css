@@ -40,20 +40,22 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 
+  --fallbackColor: #dbc5a5;
   --newCardColor: #fff9e3;
-  --headFootColor: #fffff0;
-  --mainColor: #8aa6a3;
-  --bookshelfColor: #35706a;
-  --formColor: #d0e8cf;
-  --btnColor: #e5e4e4;
+  --headFootColor: #f3f0e7;
+  --mainColor: #c8baab;
+  --bookshelfColor: #344b33;
+  --formColor: #dbc5a5;
+  --btnColor: #c2c0bd;
   --focusColor: #0e1f1d;
   --error-color: #931b05;
-  --invalidBGColor: rgb(247, 189, 189);
-  --invalidBorderColor: rgb(249, 80, 80);
+  --invalidBGColor: #f3bea9;
+  --invalidBorderColor: #cd2d2d;
 }
 
 body {
   height: 100vh;
+  background-color: var(--fallbackColor);
 }
 
 .container {
@@ -221,13 +223,12 @@ input[type="text"] {
   border: 0.1em solid var(--bookshelfColor);
 }
 
-input[type="text"]:valid {
-  background-color: var(--newCardColor);
-}
+/* input:-webkit-autofill {
+  background-color: transparent;
+} */
 
 input[type="text"].invalid {
   background-color: var(--invalidBGColor);
-  border: 0.1em solid (var(--invalidBorderColor));
 }
 
 input[type="checkbox"].statusValue,
@@ -248,10 +249,18 @@ input[type="checkbox"].card-status {
   position: relative;
 }
 
+input[type="checkbox"].card-status {
+  background-color: var(--headFootColor);
+}
+
 input[type="checkbox"].statusValue:checked,
 input[type="checkbox"].card-status:checked {
   border: 1px solid var(--bookshelfColor);
   background-color: var(--newCardColor);
+}
+
+input[type="checkbox"].card-status:checked {
+  background-color: var(--headFootColor);
 }
 
 input[type="checkbox"].statusValue:checked::before,
