@@ -133,23 +133,22 @@ export class Book {
       //Keybarod events to remove books
 
       removeBtn.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-          arrayPosition = newCard.dataset.cardNum;
+        if (e.key === "Enter" || e.key === " ") {
+          let arrayPosition = newCard.dataset.cardNum;
 
           console.log(arrayPosition);
 
-          removedElement = myLibrary.libraryData.splice(arrayPosition, 1);
+          let removedElement = myLibrary.libraryData.splice(arrayPosition, 1);
           console.log(removedElement);
-          console.log(myLibrary.libraryData);
         }
       });
 
       removeBtn.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-          parent = document.querySelector(".card-div");
-          deleteCard = document.querySelector("[data-card-num]");
+        if (e.key === "Enter" || e.key === " ") {
+          const parent = document.querySelector(".card-div");
+          let deleteCard = document.querySelector("[data-card-num]");
 
-          removedCard = parent.removeChild(deleteCard);
+          let removedCard = parent.removeChild(deleteCard);
           console.log(removedCard);
 
           Book.prototype.replaceCards();
