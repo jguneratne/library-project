@@ -361,14 +361,18 @@ button.add-book:hover {
 
 .card-info {
   display: grid;
-  grid-template-columns: 10ch 1fr;
   grid-template-rows: min-content;
   justify-items: start;
   gap: 2ch;
 }
 
+.finished-row {
+  display: flex;
+}
+
 input[type="checkbox"].card-status {
-  margin-left: 0;
+  margin-left: 1em;
+  margin-bottom: 0.3em;
 }
 
 button.remove {

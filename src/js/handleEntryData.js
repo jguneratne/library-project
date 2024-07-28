@@ -1,16 +1,19 @@
 import {
-  myLibrary,
   formDiv,
   bookTitle,
-  bookAuthor,
+  bookAuthorFirst,
+  bookAuthorLast,
   bookPages,
   readValue,
 } from "./variables";
 
+import { myLibrary } from "./arrays";
+
 export class Book {
-  constructor(title, author, pages, read) {
+  constructor(title, authorFirst, authorLast, pages, read) {
     this.title = title;
-    this.author = author;
+    this.authorFirst = authorFirst;
+    this.authorLast = authorLast;
     this.pages = pages;
     this.read = read;
   }
@@ -36,6 +39,9 @@ export class Book {
       const cardInfo = document.createElement("div");
       cardInfo.className = "card-info";
 
+      const cardRowTitle = document.createElement("div");
+      cardRowTitle.className = "card-row";
+
       const title = document.createElement("p");
       title.className = "card-heading";
       title.textContent = "Title:";
@@ -44,13 +50,30 @@ export class Book {
       titleValue.className = "title-value";
       titleValue.textContent = `${myLibrary.libraryData[i].title}`;
 
-      const author = document.createElement("p");
-      author.className = "card-heading";
-      author.textContent = "Author:";
+      const cardRowAuthorFirst = document.createElement("div");
+      cardRowAuthorFirst.className = "card-row";
 
-      const authorValue = document.createElement("p");
-      authorValue.className = "author-value";
-      authorValue.textContent = `${myLibrary.libraryData[i].author}`;
+      const authorFirst = document.createElement("p");
+      authorFirst.className = "card-heading";
+      authorFirst.textContent = "Author First Name:";
+
+      const authorFirstValue = document.createElement("p");
+      authorFirstValue.className = "author-first-value";
+      authorFirstValue.textContent = `${myLibrary.libraryData[i].authorFirst}`;
+
+      const cardRowAuthorLast = document.createElement("div");
+      cardRowAuthorLast.className = "card-row";
+
+      const authorLast = document.createElement("p");
+      authorLast.className = "card-heading";
+      authorLast.textContent = "Author Last Name:";
+
+      const authorLastValue = document.createElement("p");
+      authorLastValue.className = "author-last-value";
+      authorLastValue.textContent = `${myLibrary.libraryData[i].authorLast}`;
+
+      const cardRowPages = document.createElement("div");
+      cardRowPages.className = "card-row";
 
       const pages = document.createElement("p");
       pages.className = "card-heading";
@@ -59,6 +82,9 @@ export class Book {
       const pagesValue = document.createElement("p");
       pagesValue.className = "pages-value";
       pagesValue.textContent = `${myLibrary.libraryData[i].pages}`;
+
+      const cardRowStatus = document.createElement("div");
+      cardRowStatus.className = "card-row finished-row";
 
       const statusLabel = document.createElement("LABEL");
       statusLabel.setAttribute("for", "status");
@@ -81,14 +107,27 @@ export class Book {
 
       libEntry.appendChild(newCard);
       newCard.appendChild(cardInfo);
-      cardInfo.appendChild(title);
-      cardInfo.appendChild(titleValue);
-      cardInfo.appendChild(author);
-      cardInfo.appendChild(authorValue);
-      cardInfo.appendChild(pages);
-      cardInfo.appendChild(pagesValue);
-      cardInfo.appendChild(statusLabel);
-      cardInfo.appendChild(checkboxInput);
+
+      cardInfo.appendChild(cardRowTitle);
+      cardRowTitle.appendChild(title);
+      cardRowTitle.appendChild(titleValue);
+
+      cardInfo.appendChild(cardRowAuthorFirst);
+      cardRowAuthorFirst.appendChild(authorFirst);
+      cardRowAuthorFirst.appendChild(authorFirstValue);
+
+      cardInfo.appendChild(cardRowAuthorLast);
+      cardRowAuthorLast.appendChild(authorLast);
+      cardRowAuthorLast.appendChild(authorLastValue);
+
+      cardInfo.appendChild(cardRowPages);
+      cardRowPages.appendChild(pages);
+      cardRowPages.appendChild(pagesValue);
+
+      cardInfo.appendChild(cardRowStatus);
+      cardRowStatus.appendChild(statusLabel);
+      cardRowStatus.appendChild(checkboxInput);
+
       newCard.appendChild(removeBtn);
 
       checkboxInput.addEventListener(
@@ -170,7 +209,8 @@ export class Book {
   getBookData() {
     const libraryEntry = new Book(
       bookTitle.value,
-      bookAuthor.value,
+      bookAuthorFirst.value,
+      bookAuthorLast.value,
       bookPages.value,
       readValue.checked,
     );

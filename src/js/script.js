@@ -2,7 +2,8 @@ import { formBtn, cancelForm } from "./formListeners";
 
 import {
   validateTitle,
-  validateAuthor,
+  validateAuthorFirst,
+  validateAuthorLast,
   validatePages,
   validateOnSubmit,
 } from "./formValidation";
@@ -11,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   formBtn();
   cancelForm();
   validateTitle();
-  validateAuthor();
+  validateAuthorFirst();
+  validateAuthorLast();
   validatePages();
   validateOnSubmit();
 });

@@ -4,8 +4,10 @@ import {
   form,
   bookTitle,
   titleMsg,
-  bookAuthor,
-  authorMsg,
+  bookAuthorFirst,
+  authorFirstMsg,
+  bookAuthorLast,
+  authorLastMsg,
   bookPages,
   pagesMsg,
   submitError,
@@ -21,12 +23,22 @@ export function validateTitle() {
   });
 }
 
-export function validateAuthor() {
-  bookAuthor.addEventListener("blur", () => {
-    if (bookAuthor.validity.valueMissing) {
-      showError(bookAuthor, authorMsg);
+export function validateAuthorFirst() {
+  bookAuthorFirst.addEventListener("blur", () => {
+    if (bookAuthorFirst.validity.valueMissing) {
+      showError(bookAuthorFirst, authorFirstMsg);
     } else {
-      removeError(bookAuthor, authorMsg);
+      removeError(bookAuthorFirst, authorFirstMsg);
+    }
+  });
+}
+
+export function validateAuthorLast() {
+  bookAuthorLast.addEventListener("blur", () => {
+    if (bookAuthorLast.validity.valueMissing) {
+      showError(bookAuthorLast, authorLastMsg);
+    } else {
+      removeError(bookAuthorLast, authorLastMsg);
     }
   });
 }
@@ -46,17 +58,20 @@ export function validateOnSubmit() {
     e.preventDefault();
     if (
       !bookTitle.validity.valid ||
-      !bookAuthor.validity.valid ||
+      !bookAuthorFirst.validity.valid ||
+      !bookAuthorLast.validity.valid ||
       !bookPages.validity.valid
     ) {
       showError(bookTitle, titleMsg);
-      showError(bookAuthor, authorMsg);
+      showError(bookAuthorFirst, authorFirstMsg);
+      showError(bookAuthorLast, authorLastMsg);
       showError(bookPages, pagesMsg);
       submitError.style.visibility = "visible";
       submitError.setAttribute("aria-live", "polite");
     } else if (
       bookTitle.validity.valid ||
-      bookAuthor.validity.valid ||
+      bookAuthorFirst.validity.valid ||
+      bookAuthorLast.validity.valid ||
       bookPages.validity.valid
     ) {
       submitError.style.visibility = "hidden";

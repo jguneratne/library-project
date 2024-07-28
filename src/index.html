@@ -54,17 +54,35 @@
                 </div>
 
                 <div class="form-line">
-                  <label for="author">* Author:</label>
+                  <label for="authorFirst">* Author First Name:</label>
                   <input
                     type="text"
-                    id="author"
-                    class="author"
+                    id="authorFirst"
+                    class="author-first"
                     name="cardInfo"
                     required
                   />
                 </div>
                 <div class="instruct">
-                  <p class="author-msg">Please enter an author.</p>
+                  <p class="author-first-msg">
+                    Please enter an author's first name.
+                  </p>
+                </div>
+
+                <div class="form-line">
+                  <label for="authorLast">* Author Last Name:</label>
+                  <input
+                    type="text"
+                    id="authorLast"
+                    class="author-last"
+                    name="cardInfo"
+                    required
+                  />
+                </div>
+                <div class="instruct">
+                  <p class="author-last-msg">
+                    Please enter an author's last name.
+                  </p>
                 </div>
 
                 <div class="form-line">
@@ -120,26 +138,39 @@
           <div class="card-div">
             <!-- <div class="new-card">
               <div class="card-info">
-                <p class="card-heading">Title:</p>
-                <p class="title-value">
-                  Placeholder Title That's Really Long so I can make sure the
-                  row spacing is correct.
-                </p>
+                <div class="card-row">
+                  <p class="card-heading">Title:</p>
+                  <p class="title-value">
+                    Placeholder Title That's Really Long so I can make sure the
+                    row spacing is correct.
+                  </p>
+                </div>
 
-                <p class="card-heading">Author:</p>
-                <p class="title-value">Placeholder Author</p>
+                <div class="card-row">
+                  <p class="card-heading">Author First Name:</p>
+                  <p class="title-value">Placeholder Author</p>
+                </div>
 
-                <p class="card-heading">Pages:</p>
-                <p class="pages-value">Placeholder Pages</p>
+                <div class="card-row">
+                  <p class="card-heading">Author Last Name:</p>
+                  <p class="title-value">Placeholder Author</p>
+                </div>
 
-                <label for="status">Finished:</label>
-                <input
-                  type="checkbox"
-                  id="status"
-                  value="read"
-                  name="cardInfo"
-                  class="card-heading card-status"
-                />
+                <div class="card-row">
+                  <p class="card-heading">Pages:</p>
+                  <p class="pages-value">Placeholder Pages</p>
+                </div>
+
+                <div class="card-row finished-row">
+                  <label for="status">Finished:</label>
+                  <input
+                    type="checkbox"
+                    id="status"
+                    value="read"
+                    name="cardInfo"
+                    class="card-heading card-status"
+                  />
+                </div>
               </div>
               <button type="submit" value="Remove" class="remove">
                 Remove Book
