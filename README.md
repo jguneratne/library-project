@@ -12,3 +12,4 @@ Finish Date: June 14, 2023
 
 Install Webpack, Responsive layout/styling, and add JS form validation:
 Start Date: July 23, 2024
+End Date: July 27, 2024
