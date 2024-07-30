@@ -326,6 +326,25 @@ button.add-book:hover {
   cursor: pointer;
 }
 
+/* Organizational Btns */
+
+.org-div {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+}
+
+.org-div h2 {
+  min-width: 100%;
+  text-align: center;
+  color: var(--headFootColor);
+}
+
+.btns-div {
+  max-width: 80%;
+  text-align: center;
+  margin: 0 auto;
+}
+
 /* Library Entry */
 
 .card-div {
@@ -351,12 +370,14 @@ button.add-book:hover {
 .new-card .card-heading {
   font-family: "Nunito";
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.1em;
+  text-decoration: underline;
 }
 
 .new-card p {
   font-family: "Nunito";
   font-weight: 300;
+  font-size: 1.1rem;
 }
 
 .card-info {
